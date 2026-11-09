@@ -1,0 +1,750 @@
+[
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 1,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": true,
+    "image_display_p3": false,
+    "source": [
+      3,
+      2,
+      117,
+      89
+    ],
+    "destination": [
+      5.25,
+      7.75,
+      58.5,
+      66.75
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      -4,
+      -3
+    ],
+    "smoothing": true,
+    "global_alpha": 1,
+    "composite": 0,
+    "sigma": 135.01,
+    "pre": [],
+    "post": [],
+    "clip": true,
+    "supported": true,
+    "expected_macos": "7d80be1fece0a4168cc94cbebfa06d09205a3413096bfb2ccc80fbc81076bb4d",
+    "expected_linux": "",
+    "base_fixture": 0,
+    "shadow": false,
+    "shadow_color": 2641416224,
+    "offset": [
+      9.25,
+      -13.75
+    ]
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": false,
+    "image_display_p3": false,
+    "source": [
+      3,
+      2,
+      117,
+      89
+    ],
+    "destination": [
+      5.25,
+      7.75,
+      58.5,
+      66.75
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      -3,
+      -2
+    ],
+    "smoothing": false,
+    "global_alpha": 0.7,
+    "composite": 7,
+    "sigma": 135.01,
+    "pre": [
+      [
+        2.3,
+        0,
+        0,
+        0,
+        -0.3,
+        0,
+        0.8,
+        0,
+        0,
+        0.1,
+        0,
+        0,
+        1.1,
+        0,
+        -0.05,
+        0,
+        0,
+        0,
+        0.65,
+        0
+      ]
+    ],
+    "post": [],
+    "clip": false,
+    "supported": true,
+    "expected_macos": "2de7278a1b4828f1aacf707f7ce7a58916bf2d144042ccad849bf557f1b87ed8",
+    "expected_linux": "",
+    "base_fixture": 1,
+    "shadow": true,
+    "shadow_color": 2641416224,
+    "offset": [
+      9.25,
+      -13.75
+    ]
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": true,
+    "image_display_p3": true,
+    "source": [
+      3,
+      2,
+      117,
+      89
+    ],
+    "destination": [
+      5.25,
+      7.75,
+      58.5,
+      66.75
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      -2,
+      -1
+    ],
+    "smoothing": true,
+    "global_alpha": 0.43391985,
+    "composite": 9,
+    "sigma": 135.01,
+    "pre": [],
+    "post": [
+      [
+        -0.7,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0.8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.6,
+        0,
+        0.1,
+        0,
+        0,
+        0,
+        0.8,
+        0
+      ]
+    ],
+    "clip": false,
+    "supported": true,
+    "expected_macos": "b2f3078667063cefd2d44605955cec2f1d5b6889f2c0897368c096f1c5e5d935",
+    "expected_linux": "",
+    "base_fixture": 2,
+    "shadow": false,
+    "shadow_color": 2641416224,
+    "offset": [
+      9.25,
+      -13.75
+    ]
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 1,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": false,
+    "image_display_p3": true,
+    "source": [
+      3,
+      2,
+      117,
+      89
+    ],
+    "destination": [
+      5.25,
+      7.75,
+      58.5,
+      66.75
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      -1,
+      0
+    ],
+    "smoothing": false,
+    "global_alpha": 0.998,
+    "composite": 1,
+    "sigma": 135.01,
+    "pre": [],
+    "post": [],
+    "clip": true,
+    "supported": true,
+    "expected_macos": "4d1ef2e9dc50b03052c94e9d152f661118d7db54e7a88ad602e73925811c3bc6",
+    "expected_linux": "",
+    "base_fixture": 3,
+    "shadow": true,
+    "shadow_color": 2641416224,
+    "offset": [
+      9.25,
+      -13.75
+    ]
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": true,
+    "image_display_p3": false,
+    "source": [
+      3,
+      2,
+      117,
+      89
+    ],
+    "destination": [
+      5.25,
+      7.75,
+      58.5,
+      66.75
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      0,
+      1
+    ],
+    "smoothing": true,
+    "global_alpha": 1,
+    "composite": 11,
+    "sigma": 135.01,
+    "pre": [
+      [
+        2.3,
+        0,
+        0,
+        0,
+        -0.3,
+        0,
+        0.8,
+        0,
+        0,
+        0.1,
+        0,
+        0,
+        1.1,
+        0,
+        -0.05,
+        0,
+        0,
+        0,
+        0.65,
+        0
+      ]
+    ],
+    "post": [],
+    "clip": false,
+    "supported": true,
+    "expected_macos": "0ff7c68391c1742131fc445dc1f2774ea4cdad322967c8ec42e65164c9102485",
+    "expected_linux": "",
+    "base_fixture": 4,
+    "shadow": false,
+    "shadow_color": 2641416224,
+    "offset": [
+      9.25,
+      -13.75
+    ]
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": false,
+    "image_display_p3": false,
+    "source": [
+      3,
+      2,
+      117,
+      89
+    ],
+    "destination": [
+      5.25,
+      7.75,
+      58.5,
+      66.75
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      1,
+      2
+    ],
+    "smoothing": false,
+    "global_alpha": 0.7,
+    "composite": 25,
+    "sigma": 135.01,
+    "pre": [],
+    "post": [
+      [
+        -0.7,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0.8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.6,
+        0,
+        0.1,
+        0,
+        0,
+        0,
+        0.8,
+        0
+      ]
+    ],
+    "clip": false,
+    "supported": true,
+    "expected_macos": "b2343f97ab8e72daac163f565c27acfaad853f8e4fa17fd19ba8c24bb52e7d81",
+    "expected_linux": "",
+    "base_fixture": 5,
+    "shadow": true,
+    "shadow_color": 2641416224,
+    "offset": [
+      9.25,
+      -13.75
+    ]
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 1,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": true,
+    "image_display_p3": true,
+    "source": [
+      3,
+      2,
+      117,
+      89
+    ],
+    "destination": [
+      5.25,
+      7.75,
+      58.5,
+      66.75
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      2,
+      3
+    ],
+    "smoothing": true,
+    "global_alpha": 0.43391985,
+    "composite": 5,
+    "sigma": 135.01,
+    "pre": [],
+    "post": [],
+    "clip": true,
+    "supported": true,
+    "expected_macos": "77ee7552da56317c7db9ab605de9e1eafa7da8c395e0ab8755b686387a8e6054",
+    "expected_linux": "",
+    "base_fixture": 6,
+    "shadow": false,
+    "shadow_color": 2641416224,
+    "offset": [
+      9.25,
+      -13.75
+    ]
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": false,
+    "image_display_p3": true,
+    "source": [
+      3,
+      2,
+      117,
+      89
+    ],
+    "destination": [
+      5.25,
+      7.75,
+      58.5,
+      66.75
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      3,
+      -3
+    ],
+    "smoothing": false,
+    "global_alpha": 0.998,
+    "composite": 10,
+    "sigma": 135.01,
+    "pre": [
+      [
+        2.3,
+        0,
+        0,
+        0,
+        -0.3,
+        0,
+        0.8,
+        0,
+        0,
+        0.1,
+        0,
+        0,
+        1.1,
+        0,
+        -0.05,
+        0,
+        0,
+        0,
+        0.65,
+        0
+      ]
+    ],
+    "post": [],
+    "clip": false,
+    "supported": true,
+    "expected_macos": "03f286f8a213e86caf95b0ea3330c4a9ca7f1cb4e15c73b89717a0d6cf13affd",
+    "expected_linux": "",
+    "base_fixture": 7,
+    "shadow": true,
+    "shadow_color": 2641416224,
+    "offset": [
+      9.25,
+      -13.75
+    ]
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": true,
+    "image_display_p3": false,
+    "source": [
+      3.25,
+      2.125,
+      116.5,
+      88.75
+    ],
+    "destination": [
+      5.25,
+      7.75,
+      58.25,
+      66.5625
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      3,
+      -1
+    ],
+    "smoothing": true,
+    "global_alpha": 1,
+    "composite": 0,
+    "sigma": 135.01,
+    "pre": [
+      [
+        2.3,
+        0,
+        0,
+        0,
+        -0.3,
+        0,
+        0.8,
+        0,
+        0,
+        0.1,
+        0,
+        0,
+        1.1,
+        0,
+        -0.05,
+        0,
+        0,
+        0,
+        0.65,
+        0
+      ]
+    ],
+    "post": [],
+    "clip": false,
+    "supported": true,
+    "expected_macos": "4a492d8de1a7537f6c5c55581aca980345012aed5c3c063ec199cb6b13b379db",
+    "expected_linux": "",
+    "base_fixture": 16,
+    "shadow": false,
+    "shadow_color": 2641416224,
+    "offset": [
+      9.25,
+      -13.75
+    ]
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": false,
+    "image_display_p3": false,
+    "source": [
+      3.25,
+      2.125,
+      116.5,
+      88.75
+    ],
+    "destination": [
+      5.25,
+      7.75,
+      58.25,
+      66.5625
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      4,
+      0
+    ],
+    "smoothing": false,
+    "global_alpha": 0.7,
+    "composite": 7,
+    "sigma": 135.01,
+    "pre": [],
+    "post": [
+      [
+        -0.7,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0.8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.6,
+        0,
+        0.1,
+        0,
+        0,
+        0,
+        0.8,
+        0
+      ]
+    ],
+    "clip": false,
+    "supported": true,
+    "expected_macos": "f509b823d9ded0f6a20b55ae72265b859cd5ce4d3b67cb3a2d69d92a0f8350b8",
+    "expected_linux": "",
+    "base_fixture": 17,
+    "shadow": true,
+    "shadow_color": 2641416224,
+    "offset": [
+      9.25,
+      -13.75
+    ]
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 1,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": true,
+    "image_display_p3": false,
+    "source": [
+      -2,
+      -1,
+      125,
+      95
+    ],
+    "destination": [
+      5.25,
+      7.75,
+      62.5,
+      71.25
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      2,
+      0
+    ],
+    "smoothing": true,
+    "global_alpha": 1,
+    "composite": 0,
+    "sigma": 135.01,
+    "pre": [],
+    "post": [],
+    "clip": true,
+    "supported": true,
+    "expected_macos": "ceed5bac7106b947bdf03edadffadd7d19f1377db80dc22c0055d7dfad8c0c7d",
+    "expected_linux": "",
+    "base_fixture": 24,
+    "shadow": false,
+    "shadow_color": 2641416224,
+    "offset": [
+      9.25,
+      -13.75
+    ]
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": false,
+    "image_display_p3": false,
+    "source": [
+      -2,
+      -1,
+      125,
+      95
+    ],
+    "destination": [
+      5.25,
+      7.75,
+      62.5,
+      71.25
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      3,
+      1
+    ],
+    "smoothing": false,
+    "global_alpha": 0.7,
+    "composite": 7,
+    "sigma": 135.01,
+    "pre": [
+      [
+        2.3,
+        0,
+        0,
+        0,
+        -0.3,
+        0,
+        0.8,
+        0,
+        0,
+        0.1,
+        0,
+        0,
+        1.1,
+        0,
+        -0.05,
+        0,
+        0,
+        0,
+        0.65,
+        0
+      ]
+    ],
+    "post": [],
+    "clip": false,
+    "supported": true,
+    "expected_macos": "edf67d81bc04d9db580d52cc001f1a48dcbab66c16e2a0d7ce2a6a49efa88189",
+    "expected_linux": "",
+    "base_fixture": 25,
+    "shadow": true,
+    "shadow_color": 2641416224,
+    "offset": [
+      9.25,
+      -13.75
+    ]
+  }
+]
