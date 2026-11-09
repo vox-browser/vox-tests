@@ -1,0 +1,346 @@
+{
+  "source_repository": "https://github.com/vox-browser/vox",
+  "source_commit": "0b73c08ea1481b4b586ad27748d9b8e1551f1222",
+  "files": {
+    "evidence/gg-migration/aligned-image-layers-20261108.json": {
+      "original_path": "docs/gg-migration/aligned-image-layers-20261108.json",
+      "sha256": "fc994bb013db0d735ed171137a8f2e9b360994c8c9de9d52b3361be38c904798"
+    },
+    "evidence/gg-migration/bitmap-color-filters-20261108.json": {
+      "original_path": "docs/gg-migration/bitmap-color-filters-20261108.json",
+      "sha256": "bcdad0a9b544ea08b20fb023fd5dbc207ca38da6dfc41fac44317b988438aae6"
+    },
+    "evidence/gg-migration/bitmap-glyphs-mipmaps-20261108.json": {
+      "original_path": "docs/gg-migration/bitmap-glyphs-mipmaps-20261108.json",
+      "sha256": "b31cbf15429e3634d715b223051e67571b89e992c7a565a952c4b8def2a00808"
+    },
+    "evidence/gg-migration/blur-color-chains-20261108.json": {
+      "original_path": "docs/gg-migration/blur-color-chains-20261108.json",
+      "sha256": "5bd6292ae91301f71be9b7ccb70ea77c8855c9e93c3562f5b4ed34ce95cb48a0"
+    },
+    "evidence/gg-migration/clipped-text-20261106.json": {
+      "original_path": "docs/gg-migration/clipped-text-20261106.json",
+      "sha256": "ffcaadf2a1341448a0d0b0df5a0853011699ee332ffdc9e3242508fa1729b989"
+    },
+    "evidence/gg-migration/color-image-crops-20261109.json": {
+      "original_path": "docs/gg-migration/color-image-crops-20261109.json",
+      "sha256": "36525268e732742aa4283b19b6360a8052eb0776b1a8ab749ec7305eb4b4ab7d"
+    },
+    "evidence/gg-migration/colrv0-glyphs-20261108.json": {
+      "original_path": "docs/gg-migration/colrv0-glyphs-20261108.json",
+      "sha256": "7a68f3161c28f9f81a7268abdfe354a22f7d7be66d7cf4ab9910aa6338558f95"
+    },
+    "evidence/gg-migration/default-20261106.json": {
+      "original_path": "docs/gg-migration/default-20261106.json",
+      "sha256": "fbb129daa6e05f25db1ac69deb18077938f8d1e87156665673de21d6d0894d4d"
+    },
+    "evidence/gg-migration/deferred-image-crops-20261109.json": {
+      "original_path": "docs/gg-migration/deferred-image-crops-20261109.json",
+      "sha256": "f391a281b53099083877c95328c1c00cc4bc37d3289f35253f2824dea6d2f912"
+    },
+    "evidence/gg-migration/drop-shadow-20261108.json": {
+      "original_path": "docs/gg-migration/drop-shadow-20261108.json",
+      "sha256": "4611c09875dca83e5a93ac22677c0623d71496b51388cf73db96a1400b6ead1b"
+    },
+    "evidence/gg-migration/filter-composites-20261108.json": {
+      "original_path": "docs/gg-migration/filter-composites-20261108.json",
+      "sha256": "a6b96d9238d57c17feb1963d66df5eef8db7b4e524e6b21ebd30d4c4ad534f36"
+    },
+    "evidence/gg-migration/filtered-images-20261108.json": {
+      "original_path": "docs/gg-migration/filtered-images-20261108.json",
+      "sha256": "179aff52a5587ecccee0e5eaf09d0ec48ae4753cf7426d707e9d306d907d2276"
+    },
+    "evidence/gg-migration/first-shadow-image-crops-20261109.json": {
+      "original_path": "docs/gg-migration/first-shadow-image-crops-20261109.json",
+      "sha256": "ec8b130620770504026737913158cd6e03a82ec0e64eda3421913cf921ad65b8"
+    },
+    "evidence/gg-migration/focused-20261105.json": {
+      "original_path": "docs/gg-migration/focused-20261105.json",
+      "sha256": "bb7db9b44a6c2b0cede0bbc466f8f09bbfc5a4213b1f0f05770b54a6690760e3"
+    },
+    "evidence/gg-migration/fractional-image-layers-20261108.json": {
+      "original_path": "docs/gg-migration/fractional-image-layers-20261108.json",
+      "sha256": "0af54415a88e4dfd2bb484b1d19f82dcfd84854ed3e3fd848fedbcf517bec832"
+    },
+    "evidence/gg-migration/freetype-outlines-20261108.json": {
+      "original_path": "docs/gg-migration/freetype-outlines-20261108.json",
+      "sha256": "3f29f16a7dde383ed5ec3c2357789620d4c8ecac8077c4a80deb434b734de6f3"
+    },
+    "evidence/gg-migration/hacker-news-performance-20261106.json": {
+      "original_path": "docs/gg-migration/hacker-news-performance-20261106.json",
+      "sha256": "4800fc9e0dcc165cc96a741572e96a05e99829c57255637f682534090c56a97f"
+    },
+    "evidence/gg-migration/identity-first-spatial-chains-20261109.json": {
+      "original_path": "docs/gg-migration/identity-first-spatial-chains-20261109.json",
+      "sha256": "c1a08edfad4dea5b7358c96531cc70df9ce51286b238a0a90c7a51dcda49b0ab"
+    },
+    "evidence/gg-migration/identity-image-blurs-20261108.json": {
+      "original_path": "docs/gg-migration/identity-image-blurs-20261108.json",
+      "sha256": "789218827b9662493608f02c9dc512a32b782eddca382212b2060494ade1ac0e"
+    },
+    "evidence/gg-migration/identity-image-sampling-20261108.json": {
+      "original_path": "docs/gg-migration/identity-image-sampling-20261108.json",
+      "sha256": "0c513f46908fed60b852fb4369dd32a0abd7a1ea86e9a17bbdab14d33d27dc3e"
+    },
+    "evidence/gg-migration/identity-source-image-shadows-20261108.json": {
+      "original_path": "docs/gg-migration/identity-source-image-shadows-20261108.json",
+      "sha256": "892dfc3df7d292f3ebcb83e40d2e43f74d68c40cbd30ec7ed582535cec378733"
+    },
+    "evidence/gg-migration/image-filter-composites-20261108.json": {
+      "original_path": "docs/gg-migration/image-filter-composites-20261108.json",
+      "sha256": "2a6d40602efbe9fca9ee61138cfe9150877fb936ba37b0836ae4cbd17165abb3"
+    },
+    "evidence/gg-migration/image-source-clipping-20261108.json": {
+      "original_path": "docs/gg-migration/image-source-clipping-20261108.json",
+      "sha256": "2e3019609d4d6071e2a4697d362cbe3d6c301c4841a39e0f35e4a503443ba9a7"
+    },
+    "evidence/gg-migration/large-blur-rescaling-20261109.json": {
+      "original_path": "docs/gg-migration/large-blur-rescaling-20261109.json",
+      "sha256": "f560df72f82eed0565f4f14369842b6c86eb453ba6bcf78e8714143938e659d5"
+    },
+    "evidence/gg-migration/large-near-integer-image-blurs-20261109.json": {
+      "original_path": "docs/gg-migration/large-near-integer-image-blurs-20261109.json",
+      "sha256": "cec5b0a994d6b16becabad4290fa75facc08a230ab842bdb19612f61be9d8871"
+    },
+    "evidence/gg-migration/large-source-image-blurs-20261109.json": {
+      "original_path": "docs/gg-migration/large-source-image-blurs-20261109.json",
+      "sha256": "299756c3abd5da0ac81e16e224f58a2755d00b0e411eb0d8476390671a16f6a0"
+    },
+    "evidence/gg-migration/linear-image-sampling-20261108.json": {
+      "original_path": "docs/gg-migration/linear-image-sampling-20261108.json",
+      "sha256": "58bf386302a4a4778d79e653bf1425edffeff460da1d2ce95d1b068b056df261"
+    },
+    "evidence/gg-migration/linux-bitmap-export-20261108.json": {
+      "original_path": "docs/gg-migration/linux-bitmap-export-20261108.json",
+      "sha256": "2ac331bf26ae2a19e7e6e8670234b5cf6c88edfc15ac384648e09e2946b9bd8c"
+    },
+    "evidence/gg-migration/linux-module-cache-20261108.json": {
+      "original_path": "docs/gg-migration/linux-module-cache-20261108.json",
+      "sha256": "8ed47b8fe4ffbba007243b4c2f33502707f226d41856614fae1f36191f13f3b8"
+    },
+    "evidence/gg-migration/linux-native-raster-fixtures-20261108.json": {
+      "original_path": "docs/gg-migration/linux-native-raster-fixtures-20261108.json",
+      "sha256": "f809e030c71f6b4f0f779adfb2335f76f2c1cfd89dbd38d5c8f26fb0fcedaaf5"
+    },
+    "evidence/gg-migration/linux-rgba-raster-20261108.json": {
+      "original_path": "docs/gg-migration/linux-rgba-raster-20261108.json",
+      "sha256": "4166a6bab55fa3f3cef0c9d2b9933cf872eb85466c2c1dd161541bf508b9e07e"
+    },
+    "evidence/gg-migration/macos-native-raster-fixtures-20261108.json": {
+      "original_path": "docs/gg-migration/macos-native-raster-fixtures-20261108.json",
+      "sha256": "9e8b720408c1259e58f4b72d33070028f60ad917f2fb5baa1e0541c67210790b"
+    },
+    "evidence/gg-migration/mipmap-review-native-20261108.json": {
+      "original_path": "docs/gg-migration/mipmap-review-native-20261108.json",
+      "sha256": "1bad6c6bd96ad58c368d4ceee408f113f5755f88b3ba3868ade8c59245841d88"
+    },
+    "evidence/gg-migration/mixed-filter-layers-20261108.json": {
+      "original_path": "docs/gg-migration/mixed-filter-layers-20261108.json",
+      "sha256": "dc417279635d598cac441b36656b55b4bd780cd721f334dbd2413a3970e095a5"
+    },
+    "evidence/gg-migration/near-integer-blur-crops-20261109.json": {
+      "original_path": "docs/gg-migration/near-integer-blur-crops-20261109.json",
+      "sha256": "6bfb5234735a585978a033c9d81ac371812d0ef2f54e7fc2fcbf556096d24278"
+    },
+    "evidence/gg-migration/near-integer-image-filters-20261108.json": {
+      "original_path": "docs/gg-migration/near-integer-image-filters-20261108.json",
+      "sha256": "0d04780f427b2fafa26388b76bcc6394b9dc98789f0763c58c977d7dc6a98e47"
+    },
+    "evidence/gg-migration/near-integer-image-shadows-20261108.json": {
+      "original_path": "docs/gg-migration/near-integer-image-shadows-20261108.json",
+      "sha256": "deca6f459cbf3ea4748d2e60862d086559982ffe636b77eae5ab1359eabf86d9"
+    },
+    "evidence/gg-migration/nested-inner-shadow-20261108.json": {
+      "original_path": "docs/gg-migration/nested-inner-shadow-20261108.json",
+      "sha256": "b9d97979bce5f62cd23e524e4f6120aa1318bf23404ea36f6fe759e73f2c9518"
+    },
+    "evidence/gg-migration/non-scaling-20261105.json": {
+      "original_path": "docs/gg-migration/non-scaling-20261105.json",
+      "sha256": "f7adac424630d5bbd80da84c04615a791d9282010b9865e97517c18891265d20"
+    },
+    "evidence/gg-migration/path-hit-geometry-20261109.json": {
+      "original_path": "docs/gg-migration/path-hit-geometry-20261109.json",
+      "sha256": "d814b1b270d62d5bab5329a45a93cb4edbdd5a993e1909b767410c0079ecad1c"
+    },
+    "evidence/gg-migration/portable-outer-shadow-20261108.json": {
+      "original_path": "docs/gg-migration/portable-outer-shadow-20261108.json",
+      "sha256": "3e4415256605f8219ad7101622b9abfd45e6da4760631c64af69e901e7c40084"
+    },
+    "evidence/gg-migration/pr-review-followup-20261105.json": {
+      "original_path": "docs/gg-migration/pr-review-followup-20261105.json",
+      "sha256": "020a1915b224ddc6629c6eb7805511331e7b7aaa6f9adea80d6bd0511f6b3830"
+    },
+    "evidence/gg-migration/pr-reviews-20261105.json": {
+      "original_path": "docs/gg-migration/pr-reviews-20261105.json",
+      "sha256": "b9f3d5c5bf7752264086281ec8dfcb32f254d185fd6a2ac0c5ebd9470d4005ad"
+    },
+    "evidence/gg-migration/prefiltered-drop-shadows-20261108.json": {
+      "original_path": "docs/gg-migration/prefiltered-drop-shadows-20261108.json",
+      "sha256": "153b649b8a2d62ff7fd8b368954716e642b39d21ef74470e2c4a970369fc89a6"
+    },
+    "evidence/gg-migration/prior-blur-image-crops-20261109.json": {
+      "original_path": "docs/gg-migration/prior-blur-image-crops-20261109.json",
+      "sha256": "65c859f1bc6e2ac95f564b3ac8149062197264fe53339d5930853cbb3b9d81c5"
+    },
+    "evidence/gg-migration/pull-request-16-publication-20261108.json": {
+      "original_path": "docs/gg-migration/pull-request-16-publication-20261108.json",
+      "sha256": "e9b58535e441bed373367deec82b84ee6ed5cbec5b90e02d3bca5f092e881dbf"
+    },
+    "evidence/gg-migration/rejected-shadow-graphs-20261109.json": {
+      "original_path": "docs/gg-migration/rejected-shadow-graphs-20261109.json",
+      "sha256": "de692eedd8be5dca6ea3c4f1d8fb52b0f53135dc14a0e7b9644e2e9e76c76b14"
+    },
+    "evidence/gg-migration/repeated-blurs-20261108.json": {
+      "original_path": "docs/gg-migration/repeated-blurs-20261108.json",
+      "sha256": "5f38cc8f7759b3156cb58e4fccc22943e16e57c979dc9f6c91d0bbc1116eb220"
+    },
+    "evidence/gg-migration/resampled-image-blurs-20261108.json": {
+      "original_path": "docs/gg-migration/resampled-image-blurs-20261108.json",
+      "sha256": "91ab3c7dd6c508101f805519f9d5c1abcef194bfc70669f7b3a3094d6055cef8"
+    },
+    "evidence/gg-migration/resampled-spatial-chains-20261109.json": {
+      "original_path": "docs/gg-migration/resampled-spatial-chains-20261109.json",
+      "sha256": "b21d52870cfcdba0b527badfe5af4f7084c4c19d6760428b7ac12c933f02d2b3"
+    },
+    "evidence/gg-migration/resolved-source-image-shadows-20261109.json": {
+      "original_path": "docs/gg-migration/resolved-source-image-shadows-20261109.json",
+      "sha256": "dacc9ab26a5aab8d93d36d892757f993d09e3d57dbdfa1279981074f512de5e1"
+    },
+    "evidence/gg-migration/retained-text-shadow-20261108.json": {
+      "original_path": "docs/gg-migration/retained-text-shadow-20261108.json",
+      "sha256": "3fef8b18424f3b61d78b7c5da04764ae636c1e4c31c17a08f4846e1ea57e0450"
+    },
+    "evidence/gg-migration/review-20261106.json": {
+      "original_path": "docs/gg-migration/review-20261106.json",
+      "sha256": "57d0694d99e1b752f6bbb1b904367b83df40d144f9194151b51bfd18617fbb03"
+    },
+    "evidence/gg-migration/rotated-image-restores-20261108.json": {
+      "original_path": "docs/gg-migration/rotated-image-restores-20261108.json",
+      "sha256": "4b8ad10240c33c43aa12270e2e9a9b4d5d8188acc8000244bb179238f41a8fac"
+    },
+    "evidence/gg-migration/rounded-clip-convexity-20261108.json": {
+      "original_path": "docs/gg-migration/rounded-clip-convexity-20261108.json",
+      "sha256": "87b97aa4fab7ec3a6facf780d4b4eb20179961041a8b313a2cd9f2ae0869d28c"
+    },
+    "evidence/gg-migration/rounded-inner-shadows-20261108.json": {
+      "original_path": "docs/gg-migration/rounded-inner-shadows-20261108.json",
+      "sha256": "84bbbef477d63048b4941b0a0aed203961ced5a201a2c0f5fe2aba33fa489283"
+    },
+    "evidence/gg-migration/scaled-drop-shadow-20261108.json": {
+      "original_path": "docs/gg-migration/scaled-drop-shadow-20261108.json",
+      "sha256": "4a8ca2072761cde997f70385df14256d171b781ed3c3e5edd8bb429d1afd1512"
+    },
+    "evidence/gg-migration/scaled-source-image-shadows-20261108.json": {
+      "original_path": "docs/gg-migration/scaled-source-image-shadows-20261108.json",
+      "sha256": "b8368c3e3456647a43c254a9489836ed5e4b1ad506645571d1010773a5a6de10"
+    },
+    "evidence/gg-migration/shadow-first-spatial-chains-20261109.json": {
+      "original_path": "docs/gg-migration/shadow-first-spatial-chains-20261109.json",
+      "sha256": "83c571c29fdd7d19ae92b2e3b7f4572667d9cd7a74632a0f29f7f1dc41e3223d"
+    },
+    "evidence/gg-migration/shadow-rgba-20261108.json": {
+      "original_path": "docs/gg-migration/shadow-rgba-20261108.json",
+      "sha256": "4f2f1da5378d8e9e83ef7fc423257e70691b59a413e8a81fa5ee63ccf20c5ef4"
+    },
+    "evidence/gg-migration/source-image-color-state-20261108.json": {
+      "original_path": "docs/gg-migration/source-image-color-state-20261108.json",
+      "sha256": "8fe5fa0e0cf9e90cd6933cdfcc2c911f6be12e10c87a0f510084c716ac14b0c6"
+    },
+    "evidence/gg-migration/source-image-layer-bounds-20261109.json": {
+      "original_path": "docs/gg-migration/source-image-layer-bounds-20261109.json",
+      "sha256": "0cffe5eedc9537963eac4244d25839bee79007904fad7a7e505cc216568cb2fb"
+    },
+    "evidence/gg-migration/source-image-paint-alpha-20261108.json": {
+      "original_path": "docs/gg-migration/source-image-paint-alpha-20261108.json",
+      "sha256": "3e8d02d181524e54b2747efa387b62884e94234558d360edcf933a2d3a7d6064"
+    },
+    "evidence/gg-migration/source-spatial-chains-20261109.json": {
+      "original_path": "docs/gg-migration/source-spatial-chains-20261109.json",
+      "sha256": "12c2cc7182f824ed9c96211daaf3db4f72a4fd001e22ff907e8b7182a89ecad7"
+    },
+    "evidence/gg-migration/spatial-filter-chains-20261109.json": {
+      "original_path": "docs/gg-migration/spatial-filter-chains-20261109.json",
+      "sha256": "5237d51ced977647065eceec04c5e36330d047766993d7c81a544982a7cae31e"
+    },
+    "evidence/gg-migration/spatial-source-clipping-20261108.json": {
+      "original_path": "docs/gg-migration/spatial-source-clipping-20261108.json",
+      "sha256": "012701c6b04b02d83dc1762deb6e09ec1e2ec25de458bccc26b48779d0e73593"
+    },
+    "evidence/gg-migration/stage22-20261105.json": {
+      "original_path": "docs/gg-migration/stage22-20261105.json",
+      "sha256": "8f67b506304b17b9145c640828cc9af0416e50a5de507eb43958bf260aab2c91"
+    },
+    "evidence/gg-migration/transformed-images-20261108.json": {
+      "original_path": "docs/gg-migration/transformed-images-20261108.json",
+      "sha256": "145e79e2a25c99c97990cc29234e33da20af6c6bb3048a2dcc0246bbdc6f3256"
+    },
+    "tools/gg_migration/cpu_raster_check.v": {
+      "original_path": "tools/gg_migration/cpu_raster_check.v",
+      "sha256": "dc32cdf5a05d9cb96328d67cac5d9b4015d53d651362e5478ee34eac2a234d2e"
+    },
+    "tools/gg_migration/fma_audit.py": {
+      "original_path": "tools/gg_migration/fma_audit.py",
+      "sha256": "6dd40ad72cad9df80d76662991a28b2f594dd799f03cf5ae63bdf398b9f18da8"
+    },
+    "tools/gg_migration/glyph_fonts.txt": {
+      "original_path": "tools/gg_migration/glyph_fonts.txt",
+      "sha256": "50c8c86ef9ff88cac8b08cf8c5993c8c715586088e9a5d4d3987bf68658153d3"
+    },
+    "tools/gg_migration/native_aligned_image_filter_hashes.py": {
+      "original_path": "tools/gg_migration/native_aligned_image_filter_hashes.py",
+      "sha256": "0b438dd58999266a6692677ce465cf089baf3857f1f6d986533f8a21a7d8290a"
+    },
+    "tools/gg_migration/native_blur_color_chain_hashes.py": {
+      "original_path": "tools/gg_migration/native_blur_color_chain_hashes.py",
+      "sha256": "0940bd6023b5e10e535a835534a1c2be596f656f4b87dfd6131d937d99424843"
+    },
+    "tools/gg_migration/native_filtered_image_hashes.py": {
+      "original_path": "tools/gg_migration/native_filtered_image_hashes.py",
+      "sha256": "19e0a708df60f09d5db9c74cd0313f07efd328c8a81efdd0565dcea6f196523a"
+    },
+    "tools/gg_migration/native_fixture_hashes.py": {
+      "original_path": "tools/gg_migration/native_fixture_hashes.py",
+      "sha256": "4ed0f1ab8da3ada9f1d0a2b0aeb2674d210ba6aa3be74e1a1f6d4d57fe8a8ab0"
+    },
+    "tools/gg_migration/native_inner_shadow_hashes.py": {
+      "original_path": "tools/gg_migration/native_inner_shadow_hashes.py",
+      "sha256": "52a4e633f8fd9dd0fb03941c29f72970de7c7aa98978e96451104e741fed2b3a"
+    },
+    "tools/gg_migration/native_large_blur_hashes.py": {
+      "original_path": "tools/gg_migration/native_large_blur_hashes.py",
+      "sha256": "3dac7c067722462666a3faa7b8d73320e9f0717f194e2916a87dcb59714e28b0"
+    },
+    "tools/gg_migration/native_large_source_blur_hashes.py": {
+      "original_path": "tools/gg_migration/native_large_source_blur_hashes.py",
+      "sha256": "48e470d2425af6198199c88cb7a8cb7c01c19ec5677487e47c3310840b321db2"
+    },
+    "tools/gg_migration/native_mipmap_fallback_hashes.py": {
+      "original_path": "tools/gg_migration/native_mipmap_fallback_hashes.py",
+      "sha256": "2543f14107dfdcd3b7e98c9ebe839f7e1e7b86d6456b1920f83cc4bffd78b350"
+    },
+    "tools/gg_migration/native_mixed_filter_hashes.py": {
+      "original_path": "tools/gg_migration/native_mixed_filter_hashes.py",
+      "sha256": "222b5e6edb73f4a02f3332a38f7b0a39cbd108ed2ba76c4df4a0b87933c12a8a"
+    },
+    "tools/gg_migration/native_path_hit_fixtures.py": {
+      "original_path": "tools/gg_migration/native_path_hit_fixtures.py",
+      "sha256": "25d597229342ae72f9129faf2d31a745f807e7f2d00eaac8e4a61e1ef21b9ab9"
+    },
+    "tools/gg_migration/native_rejected_layer_hashes.py": {
+      "original_path": "tools/gg_migration/native_rejected_layer_hashes.py",
+      "sha256": "0e4e54cf15d15a7455e2de8819c7234d2cb2d2a205b7a5bb4bdaf7a93b001a5f"
+    },
+    "tools/gg_migration/native_shadow_rgba_hashes.py": {
+      "original_path": "tools/gg_migration/native_shadow_rgba_hashes.py",
+      "sha256": "d485ac98d0a51575c9b8c21d7a9a13a966c7f198b5c95d7b7ed8c15ffc09e073"
+    },
+    "tools/gg_migration/skia_cpu_oracle.cpp": {
+      "original_path": "tools/gg_migration/skia_cpu_oracle.cpp",
+      "sha256": "6f755e198440d698840b5965eab2255c1b3def58f5f726058526c922df7c00ff"
+    },
+    "tools/gg_migration/test_cpu_raster.sh": {
+      "original_path": "tools/gg_migration/test_cpu_raster.sh",
+      "sha256": "697046e4de5921490a55848f4c481d2864a2ea090a4e91b76675361c3997b4c2"
+    }
+  }
+}
