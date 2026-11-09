@@ -261,7 +261,7 @@
       ]
     ],
     "expected_macos": "f00be8e39ec6bc7f43235343e37285116618eb45a806d76d7afaecea98bdb6a2",
-    "expected_linux": ""
+    "expected_linux": "f00be8e39ec6bc7f43235343e37285116618eb45a806d76d7afaecea98bdb6a2"
   },
   {
     "sigmas": [
@@ -555,7 +555,7 @@
       ]
     ],
     "expected_macos": "c88f74bf3bd0396aca8beb6360464e01096a8fe5c383e61a0561453f191f7654",
-    "expected_linux": ""
+    "expected_linux": "c88f74bf3bd0396aca8beb6360464e01096a8fe5c383e61a0561453f191f7654"
   },
   {
     "sigmas": [
@@ -820,7 +820,7 @@
       ]
     ],
     "expected_macos": "f00be8e39ec6bc7f43235343e37285116618eb45a806d76d7afaecea98bdb6a2",
-    "expected_linux": ""
+    "expected_linux": "f00be8e39ec6bc7f43235343e37285116618eb45a806d76d7afaecea98bdb6a2"
   },
   {
     "sigmas": [
@@ -1115,7 +1115,7 @@
       ]
     ],
     "expected_macos": "f6e28ad1753237d42be72be187a88f09a269097eeda24bcf12908db6bd361246",
-    "expected_linux": ""
+    "expected_linux": "f6e28ad1753237d42be72be187a88f09a269097eeda24bcf12908db6bd361246"
   },
   {
     "sigmas": [
@@ -1470,7 +1470,7 @@
       ]
     ],
     "expected_macos": "62cea4a16ecb51ad1c809526f32a969f1255b2d003004aaf87895a6eaa4fbeb8",
-    "expected_linux": ""
+    "expected_linux": "62cea4a16ecb51ad1c809526f32a969f1255b2d003004aaf87895a6eaa4fbeb8"
   },
   {
     "sigmas": [
@@ -1765,7 +1765,7 @@
       ]
     ],
     "expected_macos": "f00be8e39ec6bc7f43235343e37285116618eb45a806d76d7afaecea98bdb6a2",
-    "expected_linux": ""
+    "expected_linux": "f00be8e39ec6bc7f43235343e37285116618eb45a806d76d7afaecea98bdb6a2"
   },
   {
     "sigmas": [
@@ -2030,7 +2030,7 @@
       ]
     ],
     "expected_macos": "f00be8e39ec6bc7f43235343e37285116618eb45a806d76d7afaecea98bdb6a2",
-    "expected_linux": ""
+    "expected_linux": "f00be8e39ec6bc7f43235343e37285116618eb45a806d76d7afaecea98bdb6a2"
   },
   {
     "sigmas": [
@@ -2385,7 +2385,7 @@
       ]
     ],
     "expected_macos": "c88f74bf3bd0396aca8beb6360464e01096a8fe5c383e61a0561453f191f7654",
-    "expected_linux": ""
+    "expected_linux": "c88f74bf3bd0396aca8beb6360464e01096a8fe5c383e61a0561453f191f7654"
   },
   {
     "sigmas": [
@@ -2649,7 +2649,7 @@
       ]
     ],
     "expected_macos": "f00be8e39ec6bc7f43235343e37285116618eb45a806d76d7afaecea98bdb6a2",
-    "expected_linux": ""
+    "expected_linux": "f00be8e39ec6bc7f43235343e37285116618eb45a806d76d7afaecea98bdb6a2"
   },
   {
     "sigmas": [
@@ -2913,7 +2913,7 @@
       ]
     ],
     "expected_macos": "f6e28ad1753237d42be72be187a88f09a269097eeda24bcf12908db6bd361246",
-    "expected_linux": ""
+    "expected_linux": "f6e28ad1753237d42be72be187a88f09a269097eeda24bcf12908db6bd361246"
   },
   {
     "sigmas": [
@@ -3238,7 +3238,7 @@
       ]
     ],
     "expected_macos": "62cea4a16ecb51ad1c809526f32a969f1255b2d003004aaf87895a6eaa4fbeb8",
-    "expected_linux": ""
+    "expected_linux": "62cea4a16ecb51ad1c809526f32a969f1255b2d003004aaf87895a6eaa4fbeb8"
   },
   {
     "sigmas": [
@@ -3533,7 +3533,7 @@
       ]
     ],
     "expected_macos": "f00be8e39ec6bc7f43235343e37285116618eb45a806d76d7afaecea98bdb6a2",
-    "expected_linux": ""
+    "expected_linux": "f00be8e39ec6bc7f43235343e37285116618eb45a806d76d7afaecea98bdb6a2"
   },
   {
     "sigmas": [
@@ -3828,7 +3828,7 @@
       ]
     ],
     "expected_macos": "e40e81a4ae066320f6bbe1d762c5165667957a3addd780d7bf90bb82a6d0be3d",
-    "expected_linux": ""
+    "expected_linux": "e40e81a4ae066320f6bbe1d762c5165667957a3addd780d7bf90bb82a6d0be3d"
   },
   {
     "sigmas": [
@@ -4183,7 +4183,7 @@
       ]
     ],
     "expected_macos": "c88f74bf3bd0396aca8beb6360464e01096a8fe5c383e61a0561453f191f7654",
-    "expected_linux": ""
+    "expected_linux": "c88f74bf3bd0396aca8beb6360464e01096a8fe5c383e61a0561453f191f7654"
   },
   {
     "sigmas": [
@@ -4448,7 +4448,7 @@
       ]
     ],
     "expected_macos": "1516aedad9b79dc403c1959f338b0076432c164cdaad1eacedbb435a4d6bd630",
-    "expected_linux": ""
+    "expected_linux": "1516aedad9b79dc403c1959f338b0076432c164cdaad1eacedbb435a4d6bd630"
   },
   {
     "sigmas": [
@@ -4743,7 +4743,7 @@
       ]
     ],
     "expected_macos": "f1c007ec3f14a3b3aa4a740b68d6a227bec68edd177aac709407bdd8dd0c4756",
-    "expected_linux": ""
+    "expected_linux": "f1c007ec3f14a3b3aa4a740b68d6a227bec68edd177aac709407bdd8dd0c4756"
   },
   {
     "sigmas": [
@@ -5037,7 +5037,7 @@
       ]
     ],
     "expected_macos": "516bcce4886a9b075dd9791b9464ced019e22ee8d1f5a84deb50885a80915ba0",
-    "expected_linux": ""
+    "expected_linux": "516bcce4886a9b075dd9791b9464ced019e22ee8d1f5a84deb50885a80915ba0"
   },
   {
     "sigmas": [
@@ -5301,7 +5301,7 @@
       ]
     ],
     "expected_macos": "d075ce7a4e5e47fdfa0ce90c1f3c23a62554f818bd066912e77679b1efcceca9",
-    "expected_linux": ""
+    "expected_linux": "d075ce7a4e5e47fdfa0ce90c1f3c23a62554f818bd066912e77679b1efcceca9"
   },
   {
     "sigmas": [
@@ -5566,7 +5566,7 @@
       ]
     ],
     "expected_macos": "e0c4e542907c903a1a1d4f2589c68bdb646ac6a160ec2947bacc5f3856c5c207",
-    "expected_linux": ""
+    "expected_linux": "e0c4e542907c903a1a1d4f2589c68bdb646ac6a160ec2947bacc5f3856c5c207"
   },
   {
     "sigmas": [
@@ -5921,7 +5921,7 @@
       ]
     ],
     "expected_macos": "c88f74bf3bd0396aca8beb6360464e01096a8fe5c383e61a0561453f191f7654",
-    "expected_linux": ""
+    "expected_linux": "c88f74bf3bd0396aca8beb6360464e01096a8fe5c383e61a0561453f191f7654"
   },
   {
     "sigmas": [
@@ -6216,7 +6216,7 @@
       ]
     ],
     "expected_macos": "af095bbe6112552d43f7b6d344fe739b123d25cf1fe72a5d360a052ad5c9dcc3",
-    "expected_linux": ""
+    "expected_linux": "af095bbe6112552d43f7b6d344fe739b123d25cf1fe72a5d360a052ad5c9dcc3"
   },
   {
     "sigmas": [
@@ -6511,7 +6511,7 @@
       ]
     ],
     "expected_macos": "f6e28ad1753237d42be72be187a88f09a269097eeda24bcf12908db6bd361246",
-    "expected_linux": ""
+    "expected_linux": "f6e28ad1753237d42be72be187a88f09a269097eeda24bcf12908db6bd361246"
   },
   {
     "sigmas": [
@@ -6836,7 +6836,7 @@
       ]
     ],
     "expected_macos": "0afee1cdc5de52520d0432d503c00a9675c2a3b2957c3c7a37ca0d4db9612ac9",
-    "expected_linux": ""
+    "expected_linux": "0afee1cdc5de52520d0432d503c00a9675c2a3b2957c3c7a37ca0d4db9612ac9"
   },
   {
     "sigmas": [
@@ -7131,7 +7131,7 @@
       ]
     ],
     "expected_macos": "f00be8e39ec6bc7f43235343e37285116618eb45a806d76d7afaecea98bdb6a2",
-    "expected_linux": ""
+    "expected_linux": "f00be8e39ec6bc7f43235343e37285116618eb45a806d76d7afaecea98bdb6a2"
   },
   {
     "sigmas": [
@@ -7395,7 +7395,7 @@
       ]
     ],
     "expected_macos": "f5fe0cdf7a65578e5c61245456d9bf6c5335d310f6c8491af0a7a7cb38a08b42",
-    "expected_linux": "",
+    "expected_linux": "f5fe0cdf7a65578e5c61245456d9bf6c5335d310f6c8491af0a7a7cb38a08b42",
     "rectangle": true
   },
   {
@@ -7690,7 +7690,7 @@
       ]
     ],
     "expected_macos": "c171f6d5a6987fab811b16cd54c9ed9a9b6d3c2cf3df679cf3485b42a4bae97e",
-    "expected_linux": "",
+    "expected_linux": "c171f6d5a6987fab811b16cd54c9ed9a9b6d3c2cf3df679cf3485b42a4bae97e",
     "rectangle": true
   },
   {
@@ -7925,7 +7925,7 @@
       ]
     ],
     "expected_macos": "7fd0e4ab10200b0565c6177f4464e4a17e54d0e6dceb694e1c7eed190a87f680",
-    "expected_linux": "",
+    "expected_linux": "7fd0e4ab10200b0565c6177f4464e4a17e54d0e6dceb694e1c7eed190a87f680",
     "rectangle": true
   },
   {
@@ -8190,7 +8190,7 @@
       ]
     ],
     "expected_macos": "78de0d64470b92d98a06d08c79ce815d476fbd1e3273cf71e61b2f0aafcdd3c4",
-    "expected_linux": "",
+    "expected_linux": "78de0d64470b92d98a06d08c79ce815d476fbd1e3273cf71e61b2f0aafcdd3c4",
     "rectangle": true
   }
 ]
