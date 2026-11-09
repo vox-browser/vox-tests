@@ -71,7 +71,7 @@ if [ "$platform" = Linux ]; then
     # pkg-config emits compiler/linker words, not shell source.
     set -- $(pkg-config --cflags --libs freetype2 fontconfig libpng libjpeg libwebp libwebpdemux zlib)
     clang++ -std=c++20 -O2 -fno-rtti -shared -fPIC \
-        -I"$skia_root" -DSK_HIDE_PATH_EDIT_METHODS -DSK_R32_SHIFT=16 \
+        -I"$repo_dir" -I"$skia_root" -DSK_HIDE_PATH_EDIT_METHODS -DSK_R32_SHIFT=16 \
         "$test_repo/tools/gg_migration/skia_cpu_oracle.cpp" \
         "$skia_root/out/Release/libskia.a" "$skia_root/out/Release/libskcms.a" \
         "$@" -ldl -lpthread \
@@ -80,7 +80,7 @@ else
     set --
     if [ "${CPU_RASTER_FREETYPE:-0}" = 1 ]; then set -- -DCPURASTER_FREETYPE_ORACLE; fi
     clang++ -std=c++20 -O2 -fno-rtti -dynamiclib "$@" \
-    -I"$skia_root/include/skia" -I"$skia_root/include" \
+    -I"$repo_dir" -I"$skia_root/include/skia" -I"$skia_root/include" \
     "$test_repo/tools/gg_migration/skia_cpu_oracle.cpp" -L"$skia_root/lib" -lskia \
     -framework CoreFoundation -framework CoreGraphics -framework CoreText \
     -Wl,-rpath,"$skia_root/lib" -o "$output_dir/$oracle_name"

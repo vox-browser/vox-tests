@@ -101,7 +101,7 @@ ORACLE void oracle_difference_clip(uint8_t* pixels, int const* v, float const* f
 #include "include/ports/SkFontMgr_empty.h"
 #define SkFontMgr_New_CoreText(...) SkFontMgr_New_Custom_Empty()
 #endif
-#include "../../skia/shadow_raster.cpp"
+#include "skia/shadow_raster.cpp"
 
 static VoxShadowRect oracle_shadow_rect(float const* f) {
     VoxShadowRect r{};
@@ -360,7 +360,7 @@ static void oracle_draw_path(uint8_t* pixels, int const* a, float const* f, bool
 }
 
 // The production Canvas2D raster path (skia/canvas_raster.cpp).
-#include "../../skia/canvas_raster.cpp"
+#include "skia/canvas_raster.cpp"
 
 ORACLE int oracle_path_contains(int const* v, float const* f) {
     SkPathBuilder builder(make_path(VoxCanvasPath{f + 2, v[0], v[1] & 1}));
