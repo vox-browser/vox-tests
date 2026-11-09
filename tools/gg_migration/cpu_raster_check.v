@@ -2711,7 +2711,7 @@ fn check_image_draws(oracle Oracle, count int) !(int, int) {
 
 		if large_identity {
 			c = BitmapCase{...c, filters: c.filters.map(if it.kind in [.blur, .drop_shadow] {
-				cpuraster.CanvasFilterStep{...it, sigma: 135.01}
+				cpuraster.CanvasFilterStep{...it, sigma: [f32(135.001), 135.01, 135.1, 135.13, 135.135, 135.14][i % 6]}
 			} else { it })}
 		}
 
