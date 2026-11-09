@@ -24,7 +24,8 @@ def capture(library, fixtures, output, verify):
         storage = (C.c_uint8*len(src)).from_buffer(src)
         ref.library.oracle_pattern(storage)
         filters = [[2, 0, 0, 0, 0, m, 1] for m in c['pre']]
-        filters += [[0, 0, c['sigma'], 0, 0, [0]*20, 0]]
+        filters += [[1 if c.get('shadow') else 0, c.get('shadow_color', 0), c['sigma'],
+                     *c.get('offset', [0, 0]), [0]*20, 0]]
         filters += [[2, 0, 0, 0, 0, m, 1] for m in c['post']]
         ref.filters(filters)
         clip = rectangle(5.25, 6.5, 110.75, 100.25) if c['clip'] else []
