@@ -1426,7 +1426,7 @@ fn main() {
 		check_color_filter_cases(oracle, count)
 		return
 	}
-	if os.getenv('CPU_RASTER_CHECKS') in ['filterlayers', 'dropshadows', 'mixedshadows', 'mixedblurs', 'spatialchains', 'rejectedlayers', 'largefilterlayers', 'largeshadowlayers'] {
+	if os.getenv('CPU_RASTER_CHECKS') in ['filterlayers', 'dropshadows', 'mixedshadows', 'mixedblurs', 'spatialchains', 'rejectedlayers', 'largefilterlayers', 'largeshadowlayers', 'largeterminalblurs'] {
 		check_filter_layer_cases(oracle, count)
 		return
 	}
@@ -3284,6 +3284,7 @@ fn check_filter_layer_cases(oracle Oracle, count int) {
 		else if os.getenv('CPU_RASTER_CHECKS') == 'largefilterlayers' { random_large_layer_filters }
 		else if os.getenv('CPU_RASTER_CHECKS') == 'rejectedlayers' { random_rejected_spatial_filter_chain }
 		else if os.getenv('CPU_RASTER_CHECKS') == 'spatialchains' { random_spatial_filter_chain }
+		else if os.getenv('CPU_RASTER_CHECKS') == 'largeterminalblurs' { random_terminal_large_blur_chain }
 		else if os.getenv('CPU_RASTER_CHECKS') == 'mixedblurs' { random_color_blur_chain }
 		else if mixed { random_color_shadow_filters }
 		else if shadows { random_shadow_filters } else { random_layer_filters }
@@ -3293,6 +3294,16 @@ fn check_filter_layer_cases(oracle Oracle, count int) {
 	}
 	label := if os.getenv('CPU_RASTER_CHECKS') == 'spatialchains' { 'spatial-chain' } else if shadows { 'drop-shadow' } else { 'blur' }
 	println('${label}-filtered canvas draws: ${draws - declined} exact, ${declined} declined')
+}
+
+fn random_terminal_large_blur_chain() []cpuraster.CanvasFilterStep {
+ mut steps := []cpuraster.CanvasFilterStep{}
+ for _ in 0 .. (rand.intn(3) or { 0 }) + 1 {
+  if rand.intn(2) or { 0 } == 0 { steps << random_color_filters() }
+  steps << cpuraster.CanvasFilterStep{kind: .blur, sigma: [f32(0),.01,.8,2.5,6,12][rand.intn(6) or { 0 }]}
+ }
+ steps << random_large_layer_filters()
+ return steps
 }
 
 fn random_large_layer_filters() []cpuraster.CanvasFilterStep {
