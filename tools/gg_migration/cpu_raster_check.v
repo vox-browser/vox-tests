@@ -2701,7 +2701,9 @@ fn check_image_draws(oracle Oracle, count int) !(int, int) {
 		if large_minified {
 			c = BitmapCase{...c, source:[f32(0),0,f32(image.width),f32(image.height)]!,
 				destination:[f32(5.25),7.75,f32(image.width)*f32(.5),f32(image.height)*f32(.75)]!,
-				filters:[cpuraster.CanvasFilterStep{kind:.blur,sigma:300}]}
+				transform: if i % 4 == 0 { [f32(-1),0,0,1,f32(width)*f32(.8),f32(2.75)]! }
+					else if i % 4 == 1 { [f32(1.25),0,0,.75,3.25,2.75]! } else { c.transform },
+				filters:random_large_layer_filters()}
 		}
 
 		if compare_canvas_bitmap(oracle, initial, c, 'image ${i}')! {

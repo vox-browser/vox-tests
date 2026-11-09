@@ -36,8 +36,8 @@
     "post": [],
     "clip": true,
     "supported": true,
-    "expected_macos": "",
-    "expected_linux": "",
+    "expected_macos": "c55db4f651180f604cb69e49c9f231bab877c87a7dce7004b826ae6da44ad38c",
+    "expected_linux": "e231bc84276b8e4770dbf3e4a5fffbdc08e676bff590398298cc62d9a63003cc",
     "base_fixture": 0
   },
   {
@@ -100,8 +100,8 @@
     "post": [],
     "clip": false,
     "supported": true,
-    "expected_macos": "",
-    "expected_linux": "",
+    "expected_macos": "f023909591bbd5590cea9710ba690c0d2c1235760060a30ba506fc76f88be9bf",
+    "expected_linux": "f023909591bbd5590cea9710ba690c0d2c1235760060a30ba506fc76f88be9bf",
     "base_fixture": 1
   },
   {
@@ -164,8 +164,8 @@
     ],
     "clip": false,
     "supported": true,
-    "expected_macos": "",
-    "expected_linux": "",
+    "expected_macos": "f023909591bbd5590cea9710ba690c0d2c1235760060a30ba506fc76f88be9bf",
+    "expected_linux": "f023909591bbd5590cea9710ba690c0d2c1235760060a30ba506fc76f88be9bf",
     "base_fixture": 2
   },
   {
@@ -205,8 +205,8 @@
     "post": [],
     "clip": true,
     "supported": true,
-    "expected_macos": "",
-    "expected_linux": "",
+    "expected_macos": "210107c689fe1839876780397e0931dfa73483d992145cb13d41c6f07bf2f9ed",
+    "expected_linux": "210107c689fe1839876780397e0931dfa73483d992145cb13d41c6f07bf2f9ed",
     "base_fixture": 3
   },
   {
@@ -269,8 +269,8 @@
     "post": [],
     "clip": false,
     "supported": true,
-    "expected_macos": "",
-    "expected_linux": "",
+    "expected_macos": "d5f376e71629cb91dabfde32b1bd2c59731dfac489616e05ab5d9b7f6633db1d",
+    "expected_linux": "d5f376e71629cb91dabfde32b1bd2c59731dfac489616e05ab5d9b7f6633db1d",
     "base_fixture": 4
   },
   {
@@ -333,8 +333,8 @@
     ],
     "clip": false,
     "supported": true,
-    "expected_macos": "",
-    "expected_linux": "",
+    "expected_macos": "e1ea97290f53f652fe24f914b7561299dfb212b4ec9d83a81e3f8abee6848df0",
+    "expected_linux": "e1ea97290f53f652fe24f914b7561299dfb212b4ec9d83a81e3f8abee6848df0",
     "base_fixture": 5
   },
   {
@@ -374,8 +374,8 @@
     "post": [],
     "clip": true,
     "supported": true,
-    "expected_macos": "",
-    "expected_linux": "",
+    "expected_macos": "0ab9764c231131015f7b7a697083e118214214e4db1d70c12250af1ebc74f499",
+    "expected_linux": "0ab9764c231131015f7b7a697083e118214214e4db1d70c12250af1ebc74f499",
     "base_fixture": 6
   },
   {
@@ -438,8 +438,8 @@
     "post": [],
     "clip": false,
     "supported": true,
-    "expected_macos": "",
-    "expected_linux": "",
+    "expected_macos": "df7c41a9da2b27cc56160f3d4194f3c2b0a64a05a44aadc667e6cf36921bbe6b",
+    "expected_linux": "df7c41a9da2b27cc56160f3d4194f3c2b0a64a05a44aadc667e6cf36921bbe6b",
     "base_fixture": 7
   }
 ]
