@@ -1414,7 +1414,7 @@ fn main() {
 		check_cropped_image_views(oracle, count) or { eprintln(err.msg()); exit(1) }
 		return
 	}
-	if os.getenv('CPU_RASTER_CHECKS') in ['rejected-spatial-chains', 'identity-first-spatial-chains', 'shadow-first-spatial-chains', 'resampled-spatial-chains', 'source-spatial-chains', 'fractional-spatial-chains', 'images', 'imagefilters', 'image-space-layers', 'converted-image-layers', 'fractional-image-layers', 'image-layer-alpha', 'resampled-image-layers', 'clipped-image-layers', 'identity-image-layers', 'identity-image-sampling', 'near-integer-image-layers', 'near-integer-factored-images', 'resampled-image-shadows', 'near-integer-image-shadows', 'near-integer-factored-shadows', 'identity-image-shadows', 'resolved-image-shadows', 'large-source-image-layers', 'large-near-image-layers', 'large-source-image-shadows', 'large-minified-image-layers', 'large-minified-image-shadows', 'large-subset-image-filters', 'large-identity-image-filters', 'large-resampled-image-filters', 'large-near-rescale-image-filters', 'large-terminal-image-blurs', 'zero-stage-image-blurs', 'identity-tail-image-blurs'] {
+	if os.getenv('CPU_RASTER_CHECKS') in ['rejected-spatial-chains', 'identity-first-spatial-chains', 'shadow-first-spatial-chains', 'resampled-spatial-chains', 'source-spatial-chains', 'fractional-spatial-chains', 'images', 'imagefilters', 'image-space-layers', 'converted-image-layers', 'fractional-image-layers', 'image-layer-alpha', 'resampled-image-layers', 'clipped-image-layers', 'identity-image-layers', 'identity-image-sampling', 'near-integer-image-layers', 'near-integer-factored-images', 'resampled-image-shadows', 'near-integer-image-shadows', 'near-integer-factored-shadows', 'identity-image-shadows', 'resolved-image-shadows', 'large-source-image-layers', 'large-near-image-layers', 'large-source-image-shadows', 'large-minified-image-layers', 'large-minified-image-shadows', 'large-subset-image-filters', 'large-identity-image-filters', 'large-resampled-image-filters', 'large-near-rescale-image-filters', 'large-terminal-image-blurs', 'zero-stage-image-blurs', 'identity-tail-image-blurs', 'identity-prefix-image-blurs'] {
 		check_image_cases(oracle, count)
 		return
 	}
@@ -2491,9 +2491,10 @@ fn check_image_draws(oracle Oracle, count int) !(int, int) {
 	shadow_sources := identity_shadows || near_shadows || os.getenv('CPU_RASTER_CHECKS') == 'resampled-image-shadows'
 	resampled := resampled_chains || shadow_sources || near_integer || identity_sampling || identity_layers || os.getenv('CPU_RASTER_CHECKS') == 'resampled-image-layers'
 	clipped := os.getenv('CPU_RASTER_CHECKS') == 'clipped-image-layers'
+	identity_prefix := os.getenv('CPU_RASTER_CHECKS') == 'identity-prefix-image-blurs'
 	identity_tail := os.getenv('CPU_RASTER_CHECKS') == 'identity-tail-image-blurs'
 	zero_stage := os.getenv('CPU_RASTER_CHECKS') == 'zero-stage-image-blurs'
-	terminal_large := identity_tail || zero_stage || os.getenv('CPU_RASTER_CHECKS') == 'large-terminal-image-blurs'
+	terminal_large := identity_prefix || identity_tail || zero_stage || os.getenv('CPU_RASTER_CHECKS') == 'large-terminal-image-blurs'
 	large_near_rescale := os.getenv('CPU_RASTER_CHECKS') == 'large-near-rescale-image-filters'
 	large_near := large_near_rescale || os.getenv('CPU_RASTER_CHECKS') == 'large-near-image-layers'
 	large_source_shadows := os.getenv('CPU_RASTER_CHECKS') in ['large-source-image-shadows', 'large-minified-image-shadows']
@@ -2726,7 +2727,11 @@ fn check_image_draws(oracle Oracle, count int) !(int, int) {
 
 		if terminal_large {
 			mut filters := random_color_filters()
-			if zero_stage {
+			if identity_prefix {
+				filters << random_identity_blur_tail()
+				filters << random_large_layer_filters()
+				if i % 2 == 0 { filters << random_identity_blur_tail() }
+			} else if zero_stage {
 				filters << cpuraster.CanvasFilterStep{kind: .blur}
 				filters << random_color_filters()
 				if i % 2 == 0 { filters << cpuraster.CanvasFilterStep{kind: .blur} }
