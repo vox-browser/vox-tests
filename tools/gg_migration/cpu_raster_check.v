@@ -1414,7 +1414,7 @@ fn main() {
 		check_cropped_image_views(oracle, count) or { eprintln(err.msg()); exit(1) }
 		return
 	}
-	if os.getenv('CPU_RASTER_CHECKS') in ['rejected-spatial-chains', 'identity-first-spatial-chains', 'shadow-first-spatial-chains', 'resampled-spatial-chains', 'source-spatial-chains', 'fractional-spatial-chains', 'images', 'imagefilters', 'image-space-layers', 'converted-image-layers', 'fractional-image-layers', 'image-layer-alpha', 'resampled-image-layers', 'clipped-image-layers', 'identity-image-layers', 'identity-image-sampling', 'near-integer-image-layers', 'near-integer-factored-images', 'resampled-image-shadows', 'near-integer-image-shadows', 'near-integer-factored-shadows', 'identity-image-shadows', 'resolved-image-shadows', 'large-source-image-layers', 'large-near-image-layers', 'large-source-image-shadows', 'large-minified-image-layers', 'large-minified-image-shadows', 'large-subset-image-filters', 'large-identity-image-filters', 'large-resampled-image-filters', 'large-near-rescale-image-filters'] {
+	if os.getenv('CPU_RASTER_CHECKS') in ['rejected-spatial-chains', 'identity-first-spatial-chains', 'shadow-first-spatial-chains', 'resampled-spatial-chains', 'source-spatial-chains', 'fractional-spatial-chains', 'images', 'imagefilters', 'image-space-layers', 'converted-image-layers', 'fractional-image-layers', 'image-layer-alpha', 'resampled-image-layers', 'clipped-image-layers', 'identity-image-layers', 'identity-image-sampling', 'near-integer-image-layers', 'near-integer-factored-images', 'resampled-image-shadows', 'near-integer-image-shadows', 'near-integer-factored-shadows', 'identity-image-shadows', 'resolved-image-shadows', 'large-source-image-layers', 'large-near-image-layers', 'large-source-image-shadows', 'large-minified-image-layers', 'large-minified-image-shadows', 'large-subset-image-filters', 'large-identity-image-filters', 'large-resampled-image-filters', 'large-near-rescale-image-filters', 'large-terminal-image-blurs'] {
 		check_image_cases(oracle, count)
 		return
 	}
@@ -2491,11 +2491,12 @@ fn check_image_draws(oracle Oracle, count int) !(int, int) {
 	shadow_sources := identity_shadows || near_shadows || os.getenv('CPU_RASTER_CHECKS') == 'resampled-image-shadows'
 	resampled := resampled_chains || shadow_sources || near_integer || identity_sampling || identity_layers || os.getenv('CPU_RASTER_CHECKS') == 'resampled-image-layers'
 	clipped := os.getenv('CPU_RASTER_CHECKS') == 'clipped-image-layers'
+	terminal_large := os.getenv('CPU_RASTER_CHECKS') == 'large-terminal-image-blurs'
 	large_near_rescale := os.getenv('CPU_RASTER_CHECKS') == 'large-near-rescale-image-filters'
 	large_near := large_near_rescale || os.getenv('CPU_RASTER_CHECKS') == 'large-near-image-layers'
 	large_source_shadows := os.getenv('CPU_RASTER_CHECKS') in ['large-source-image-shadows', 'large-minified-image-shadows']
 	large_identity := os.getenv('CPU_RASTER_CHECKS') == 'large-identity-image-filters'
-	large_resampled := os.getenv('CPU_RASTER_CHECKS') == 'large-resampled-image-filters'
+	large_resampled := terminal_large || os.getenv('CPU_RASTER_CHECKS') == 'large-resampled-image-filters'
 	large_subset := large_resampled || large_identity || os.getenv('CPU_RASTER_CHECKS') == 'large-subset-image-filters'
 	large_minified := large_subset || os.getenv('CPU_RASTER_CHECKS') in ['large-minified-image-layers', 'large-minified-image-shadows']
 	large_sources := large_minified || large_source_shadows || large_near || os.getenv('CPU_RASTER_CHECKS') == 'large-source-image-layers'
@@ -2719,6 +2720,13 @@ fn check_image_draws(oracle Oracle, count int) !(int, int) {
 			c = BitmapCase{...c, filters: c.filters.map(if it.kind in [.blur, .drop_shadow] {
 				cpuraster.CanvasFilterStep{...it, sigma: [f32(135.001), 135.01, 135.1, 135.13, 135.135, 135.14][i % 6]}
 			} else { it })}
+		}
+
+		if terminal_large {
+			mut filters := random_color_filters()
+			filters << cpuraster.CanvasFilterStep{kind: .blur, sigma: [f32(.8), 2.5, 6, 12][i % 4]}
+			filters << random_terminal_large_blur_chain()
+			c = BitmapCase{...c, filters: filters}
 		}
 
 		if compare_canvas_bitmap(oracle, initial, c, 'image ${i}')! {
