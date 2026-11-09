@@ -2493,7 +2493,7 @@ fn check_image_draws(oracle Oracle, count int) !(int, int) {
 	clipped := os.getenv('CPU_RASTER_CHECKS') == 'clipped-image-layers'
 	large_near := os.getenv('CPU_RASTER_CHECKS') == 'large-near-image-layers'
 	large_source_shadows := os.getenv('CPU_RASTER_CHECKS') in ['large-source-image-shadows', 'large-minified-image-shadows']
-	large_minified := os.getenv('CPU_RASTER_CHECKS') == 'large-minified-image-layers'
+	large_minified := os.getenv('CPU_RASTER_CHECKS') in ['large-minified-image-layers', 'large-minified-image-shadows']
 	large_sources := large_minified || large_source_shadows || large_near || os.getenv('CPU_RASTER_CHECKS') == 'large-source-image-layers'
 	converted := large_sources || spatial || fractional || alpha_layers || resampled || clipped || os.getenv('CPU_RASTER_CHECKS') == 'converted-image-layers'
 	aligned := converted || os.getenv('CPU_RASTER_CHECKS') == 'image-space-layers'
