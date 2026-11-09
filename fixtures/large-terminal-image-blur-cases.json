@@ -1,0 +1,1855 @@
+[
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 1,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": true,
+    "image_display_p3": false,
+    "source": [
+      3,
+      2,
+      117,
+      89
+    ],
+    "destination": [
+      7,
+      9,
+      117,
+      89
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      -4,
+      -3
+    ],
+    "smoothing": true,
+    "global_alpha": 1,
+    "composite": 0,
+    "sigma": 135.01,
+    "pre": [],
+    "post": [],
+    "clip": true,
+    "supported": true,
+    "expected_macos": "",
+    "expected_linux": "",
+    "leading_sigmas": [
+      0.8
+    ],
+    "between": []
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": false,
+    "image_display_p3": false,
+    "source": [
+      3,
+      2,
+      117,
+      89
+    ],
+    "destination": [
+      7,
+      9,
+      117,
+      89
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      -3,
+      -2
+    ],
+    "smoothing": false,
+    "global_alpha": 0.7,
+    "composite": 7,
+    "sigma": 135.2,
+    "pre": [
+      [
+        2.3,
+        0,
+        0,
+        0,
+        -0.3,
+        0,
+        0.8,
+        0,
+        0,
+        0.1,
+        0,
+        0,
+        1.1,
+        0,
+        -0.05,
+        0,
+        0,
+        0,
+        0.65,
+        0
+      ]
+    ],
+    "post": [],
+    "clip": false,
+    "supported": true,
+    "expected_macos": "",
+    "expected_linux": "",
+    "leading_sigmas": [
+      2.5,
+      0
+    ],
+    "between": [
+      [
+        1.3,
+        0,
+        0,
+        0,
+        -0.15,
+        0,
+        1.3,
+        0,
+        0,
+        -0.15,
+        0,
+        0,
+        1.3,
+        0,
+        -0.15,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    ]
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 1,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": false,
+    "image_display_p3": true,
+    "source": [
+      3,
+      2,
+      117,
+      89
+    ],
+    "destination": [
+      7,
+      9,
+      117,
+      89
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      -1,
+      0
+    ],
+    "smoothing": false,
+    "global_alpha": 0.998,
+    "composite": 1,
+    "sigma": 532,
+    "pre": [],
+    "post": [],
+    "clip": true,
+    "supported": true,
+    "expected_macos": "",
+    "expected_linux": "",
+    "leading_sigmas": [
+      0.01,
+      6
+    ],
+    "between": [
+      [
+        1.3,
+        0,
+        0,
+        0,
+        -0.15,
+        0,
+        1.3,
+        0,
+        0,
+        -0.15,
+        0,
+        0,
+        1.3,
+        0,
+        -0.15,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    ]
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": false,
+    "image_display_p3": true,
+    "source": [
+      3,
+      2,
+      117,
+      89
+    ],
+    "destination": [
+      7,
+      9,
+      117,
+      89
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      3,
+      -3
+    ],
+    "smoothing": false,
+    "global_alpha": 0.998,
+    "composite": 10,
+    "sigma": 270,
+    "pre": [
+      [
+        2.3,
+        0,
+        0,
+        0,
+        -0.3,
+        0,
+        0.8,
+        0,
+        0,
+        0.1,
+        0,
+        0,
+        1.1,
+        0,
+        -0.05,
+        0,
+        0,
+        0,
+        0.65,
+        0
+      ]
+    ],
+    "post": [],
+    "clip": false,
+    "supported": true,
+    "expected_macos": "",
+    "expected_linux": "",
+    "leading_sigmas": [
+      0.8,
+      2.5
+    ],
+    "between": []
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": true,
+    "image_display_p3": true,
+    "source": [
+      3,
+      2,
+      117,
+      89
+    ],
+    "destination": [
+      7,
+      9,
+      117,
+      89
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      1,
+      -3
+    ],
+    "smoothing": true,
+    "global_alpha": 0.43391985,
+    "composite": 5,
+    "sigma": 700,
+    "pre": [],
+    "post": [
+      [
+        -0.7,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0.8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.6,
+        0,
+        0.1,
+        0,
+        0,
+        0,
+        0.8,
+        0
+      ]
+    ],
+    "clip": false,
+    "supported": true,
+    "expected_macos": "",
+    "expected_linux": "",
+    "leading_sigmas": [
+      0.8
+    ],
+    "between": [
+      [
+        1.3,
+        0,
+        0,
+        0,
+        -0.15,
+        0,
+        1.3,
+        0,
+        0,
+        -0.15,
+        0,
+        0,
+        1.3,
+        0,
+        -0.15,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    ]
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": true,
+    "image_display_p3": false,
+    "source": [
+      3.25,
+      2.125,
+      116.5,
+      88.75
+    ],
+    "destination": [
+      7.25,
+      9.5,
+      116.5,
+      88.75
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      3,
+      -1
+    ],
+    "smoothing": true,
+    "global_alpha": 1,
+    "composite": 0,
+    "sigma": 135.2,
+    "pre": [
+      [
+        2.3,
+        0,
+        0,
+        0,
+        -0.3,
+        0,
+        0.8,
+        0,
+        0,
+        0.1,
+        0,
+        0,
+        1.1,
+        0,
+        -0.05,
+        0,
+        0,
+        0,
+        0.65,
+        0
+      ]
+    ],
+    "post": [],
+    "clip": false,
+    "supported": true,
+    "expected_macos": "",
+    "expected_linux": "",
+    "leading_sigmas": [
+      2.5,
+      0
+    ],
+    "between": [
+      [
+        1.3,
+        0,
+        0,
+        0,
+        -0.15,
+        0,
+        1.3,
+        0,
+        0,
+        -0.15,
+        0,
+        0,
+        1.3,
+        0,
+        -0.15,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    ]
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": false,
+    "image_display_p3": false,
+    "source": [
+      3.25,
+      2.125,
+      116.5,
+      88.75
+    ],
+    "destination": [
+      7.25,
+      9.5,
+      116.5,
+      88.75
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      4,
+      0
+    ],
+    "smoothing": false,
+    "global_alpha": 0.7,
+    "composite": 7,
+    "sigma": 270,
+    "pre": [],
+    "post": [
+      [
+        -0.7,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0.8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.6,
+        0,
+        0.1,
+        0,
+        0,
+        0,
+        0.8,
+        0
+      ]
+    ],
+    "clip": false,
+    "supported": true,
+    "expected_macos": "",
+    "expected_linux": "",
+    "leading_sigmas": [
+      0.01,
+      6
+    ],
+    "between": []
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": true,
+    "image_display_p3": false,
+    "source": [
+      3.25,
+      2.125,
+      116.5,
+      88.75
+    ],
+    "destination": [
+      7.25,
+      9.5,
+      116.5,
+      88.75
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      -2,
+      3
+    ],
+    "smoothing": true,
+    "global_alpha": 1,
+    "composite": 11,
+    "sigma": 135.01,
+    "pre": [],
+    "post": [
+      [
+        -0.7,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0.8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.6,
+        0,
+        0.1,
+        0,
+        0,
+        0,
+        0.8,
+        0
+      ]
+    ],
+    "clip": false,
+    "supported": true,
+    "expected_macos": "",
+    "expected_linux": "",
+    "leading_sigmas": [
+      0.8,
+      2.5
+    ],
+    "between": [
+      [
+        1.3,
+        0,
+        0,
+        0,
+        -0.15,
+        0,
+        1.3,
+        0,
+        0,
+        -0.15,
+        0,
+        0,
+        1.3,
+        0,
+        -0.15,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    ]
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": false,
+    "image_display_p3": true,
+    "source": [
+      3.25,
+      2.125,
+      116.5,
+      88.75
+    ],
+    "destination": [
+      7.25,
+      9.5,
+      116.5,
+      88.75
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      1,
+      -1
+    ],
+    "smoothing": false,
+    "global_alpha": 0.998,
+    "composite": 10,
+    "sigma": 532,
+    "pre": [],
+    "post": [
+      [
+        -0.7,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0.8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.6,
+        0,
+        0.1,
+        0,
+        0,
+        0,
+        0.8,
+        0
+      ]
+    ],
+    "clip": false,
+    "supported": true,
+    "expected_macos": "",
+    "expected_linux": "",
+    "leading_sigmas": [
+      0.8
+    ],
+    "between": [
+      [
+        1.3,
+        0,
+        0,
+        0,
+        -0.15,
+        0,
+        1.3,
+        0,
+        0,
+        -0.15,
+        0,
+        0,
+        1.3,
+        0,
+        -0.15,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    ]
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 1,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": true,
+    "image_display_p3": false,
+    "source": [
+      -2,
+      -1,
+      125,
+      95
+    ],
+    "destination": [
+      9,
+      7,
+      125,
+      95
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      2,
+      0
+    ],
+    "smoothing": true,
+    "global_alpha": 1,
+    "composite": 0,
+    "sigma": 700,
+    "pre": [],
+    "post": [],
+    "clip": true,
+    "supported": true,
+    "expected_macos": "",
+    "expected_linux": "",
+    "leading_sigmas": [
+      2.5,
+      0
+    ],
+    "between": []
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": false,
+    "image_display_p3": false,
+    "source": [
+      -2,
+      -1,
+      125,
+      95
+    ],
+    "destination": [
+      9,
+      7,
+      125,
+      95
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      3,
+      1
+    ],
+    "smoothing": false,
+    "global_alpha": 0.7,
+    "composite": 7,
+    "sigma": 135.01,
+    "pre": [
+      [
+        2.3,
+        0,
+        0,
+        0,
+        -0.3,
+        0,
+        0.8,
+        0,
+        0,
+        0.1,
+        0,
+        0,
+        1.1,
+        0,
+        -0.05,
+        0,
+        0,
+        0,
+        0.65,
+        0
+      ]
+    ],
+    "post": [],
+    "clip": false,
+    "supported": true,
+    "expected_macos": "",
+    "expected_linux": "",
+    "leading_sigmas": [
+      0.01,
+      6
+    ],
+    "between": [
+      [
+        1.3,
+        0,
+        0,
+        0,
+        -0.15,
+        0,
+        1.3,
+        0,
+        0,
+        -0.15,
+        0,
+        0,
+        1.3,
+        0,
+        -0.15,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    ]
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": true,
+    "image_display_p3": false,
+    "source": [
+      3,
+      2,
+      117,
+      89
+    ],
+    "destination": [
+      7,
+      9,
+      146.25,
+      89
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      -3,
+      -3
+    ],
+    "smoothing": true,
+    "global_alpha": 1,
+    "composite": 11,
+    "sigma": 532,
+    "pre": [
+      [
+        2.3,
+        0,
+        0,
+        0,
+        -0.3,
+        0,
+        0.8,
+        0,
+        0,
+        0.1,
+        0,
+        0,
+        1.1,
+        0,
+        -0.05,
+        0,
+        0,
+        0,
+        0.65,
+        0
+      ]
+    ],
+    "post": [],
+    "clip": false,
+    "supported": false,
+    "expected_macos": "",
+    "expected_linux": "",
+    "leading_sigmas": [
+      0.8,
+      2.5
+    ],
+    "between": [
+      [
+        1.3,
+        0,
+        0,
+        0,
+        -0.15,
+        0,
+        1.3,
+        0,
+        0,
+        -0.15,
+        0,
+        0,
+        1.3,
+        0,
+        -0.15,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    ]
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": false,
+    "image_display_p3": false,
+    "source": [
+      3,
+      2,
+      117,
+      89
+    ],
+    "destination": [
+      7,
+      9,
+      117.00585,
+      89
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      -2,
+      -2
+    ],
+    "smoothing": false,
+    "global_alpha": 0.7,
+    "composite": 25,
+    "sigma": 700,
+    "pre": [],
+    "post": [
+      [
+        -0.7,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0.8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.6,
+        0,
+        0.1,
+        0,
+        0,
+        0,
+        0.8,
+        0
+      ]
+    ],
+    "clip": false,
+    "supported": false,
+    "expected_macos": "",
+    "expected_linux": "",
+    "leading_sigmas": [
+      0.8
+    ],
+    "between": []
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": false,
+    "image_display_p3": false,
+    "source": [
+      3.25,
+      2.125,
+      116.5,
+      88.75
+    ],
+    "destination": [
+      7.25,
+      9.5,
+      116.5,
+      88.75
+    ],
+    "transform": [
+      1.25,
+      0,
+      0,
+      0.75,
+      -1,
+      2
+    ],
+    "smoothing": false,
+    "global_alpha": 0.7,
+    "composite": 7,
+    "sigma": 200,
+    "pre": [],
+    "post": [
+      [
+        -0.7,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0.8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.6,
+        0,
+        0.1,
+        0,
+        0,
+        0,
+        0.8,
+        0
+      ]
+    ],
+    "clip": false,
+    "supported": true,
+    "expected_macos": "",
+    "expected_linux": "",
+    "leading_sigmas": [
+      2.5,
+      0
+    ],
+    "between": [
+      [
+        1.3,
+        0,
+        0,
+        0,
+        -0.15,
+        0,
+        1.3,
+        0,
+        0,
+        -0.15,
+        0,
+        0,
+        1.3,
+        0,
+        -0.15,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    ]
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": false,
+    "image_display_p3": false,
+    "source": [
+      3.25,
+      2.125,
+      116.5,
+      88.75
+    ],
+    "destination": [
+      7.25,
+      9.5,
+      116.5,
+      88.75
+    ],
+    "transform": [
+      -1.25,
+      0,
+      0,
+      0.75,
+      137,
+      2
+    ],
+    "smoothing": false,
+    "global_alpha": 0.7,
+    "composite": 7,
+    "sigma": 200,
+    "pre": [],
+    "post": [
+      [
+        -0.7,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0.8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.6,
+        0,
+        0.1,
+        0,
+        0,
+        0,
+        0.8,
+        0
+      ]
+    ],
+    "clip": false,
+    "supported": true,
+    "expected_macos": "",
+    "expected_linux": "",
+    "leading_sigmas": [
+      0.01,
+      6
+    ],
+    "between": [
+      [
+        1.3,
+        0,
+        0,
+        0,
+        -0.15,
+        0,
+        1.3,
+        0,
+        0,
+        -0.15,
+        0,
+        0,
+        1.3,
+        0,
+        -0.15,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    ]
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": false,
+    "image_display_p3": false,
+    "source": [
+      0.25,
+      0.125,
+      1.5,
+      90.75
+    ],
+    "destination": [
+      20,
+      2,
+      1.5,
+      90.75
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      3,
+      -1
+    ],
+    "smoothing": true,
+    "global_alpha": 1,
+    "composite": 9,
+    "sigma": 135.01,
+    "pre": [],
+    "post": [],
+    "clip": false,
+    "supported": true,
+    "expected_macos": "",
+    "expected_linux": "",
+    "leading_sigmas": [
+      0.8,
+      2.5
+    ],
+    "between": []
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": true,
+    "image_display_p3": false,
+    "source": [
+      3.25,
+      2.125,
+      116.5,
+      88.75
+    ],
+    "destination": [
+      7.25,
+      9.5,
+      116.5,
+      88.75
+    ],
+    "transform": [
+      0.007,
+      0,
+      0,
+      1.4,
+      3,
+      -4
+    ],
+    "smoothing": true,
+    "global_alpha": 0.998,
+    "composite": 9,
+    "sigma": 270,
+    "pre": [],
+    "post": [],
+    "clip": false,
+    "supported": true,
+    "expected_macos": "",
+    "expected_linux": "",
+    "leading_sigmas": [
+      0.8
+    ],
+    "between": [
+      [
+        1.3,
+        0,
+        0,
+        0,
+        -0.15,
+        0,
+        1.3,
+        0,
+        0,
+        -0.15,
+        0,
+        0,
+        1.3,
+        0,
+        -0.15,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    ]
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": true,
+    "image_display_p3": false,
+    "source": [
+      0,
+      0,
+      64,
+      64
+    ],
+    "destination": [
+      5,
+      7,
+      32,
+      32
+    ],
+    "transform": [
+      2,
+      0,
+      0,
+      2,
+      3,
+      4
+    ],
+    "smoothing": true,
+    "global_alpha": 1,
+    "composite": 0,
+    "sigma": 135.2,
+    "pre": [],
+    "post": [],
+    "clip": false,
+    "supported": true,
+    "expected_macos": "",
+    "expected_linux": "",
+    "leading_sigmas": [
+      2.5,
+      0
+    ],
+    "between": [
+      [
+        1.3,
+        0,
+        0,
+        0,
+        -0.15,
+        0,
+        1.3,
+        0,
+        0,
+        -0.15,
+        0,
+        0,
+        1.3,
+        0,
+        -0.15,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    ]
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": false,
+    "image_display_p3": false,
+    "source": [
+      0,
+      0,
+      64,
+      64
+    ],
+    "destination": [
+      5,
+      7,
+      32,
+      32
+    ],
+    "transform": [
+      2,
+      0,
+      0,
+      2,
+      3,
+      4
+    ],
+    "smoothing": true,
+    "global_alpha": 1,
+    "composite": 0,
+    "sigma": 135.2,
+    "pre": [],
+    "post": [],
+    "clip": false,
+    "supported": true,
+    "expected_macos": "",
+    "expected_linux": "",
+    "leading_sigmas": [
+      0.01,
+      6
+    ],
+    "between": []
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 1,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": false,
+    "image_display_p3": false,
+    "source": [
+      3,
+      2,
+      117,
+      89
+    ],
+    "destination": [
+      7,
+      9,
+      117,
+      89
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      -4,
+      -3
+    ],
+    "smoothing": true,
+    "global_alpha": 1,
+    "composite": 0,
+    "sigma": 135.01,
+    "pre": [],
+    "post": [],
+    "clip": true,
+    "supported": true,
+    "expected_macos": "",
+    "expected_linux": "",
+    "leading_sigmas": [
+      0.8,
+      2.5
+    ],
+    "between": [
+      [
+        1.3,
+        0,
+        0,
+        0,
+        -0.15,
+        0,
+        1.3,
+        0,
+        0,
+        -0.15,
+        0,
+        0,
+        1.3,
+        0,
+        -0.15,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    ]
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": true,
+    "image_display_p3": false,
+    "source": [
+      0,
+      0,
+      64,
+      64
+    ],
+    "destination": [
+      5.0002,
+      7.0003,
+      64.032,
+      63.9744
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "smoothing": true,
+    "global_alpha": 1,
+    "composite": 0,
+    "sigma": 135.01,
+    "pre": [],
+    "post": [],
+    "clip": false,
+    "supported": true,
+    "expected_macos": "",
+    "expected_linux": "",
+    "leading_sigmas": [
+      0.8
+    ],
+    "between": [
+      [
+        1.3,
+        0,
+        0,
+        0,
+        -0.15,
+        0,
+        1.3,
+        0,
+        0,
+        -0.15,
+        0,
+        0,
+        1.3,
+        0,
+        -0.15,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    ]
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 129,
+    "image_height": 97,
+    "image_premultiplied": false,
+    "image_display_p3": false,
+    "source": [
+      0,
+      0,
+      64,
+      64
+    ],
+    "destination": [
+      5.0002,
+      7.0003,
+      64.032,
+      63.9744
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "smoothing": true,
+    "global_alpha": 1,
+    "composite": 0,
+    "sigma": 135.01,
+    "pre": [],
+    "post": [],
+    "clip": false,
+    "supported": true,
+    "expected_macos": "",
+    "expected_linux": "",
+    "leading_sigmas": [
+      2.5,
+      0
+    ],
+    "between": []
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 1,
+    "image_width": 641,
+    "image_height": 479,
+    "image_premultiplied": true,
+    "image_display_p3": false,
+    "source": [
+      3,
+      2,
+      630,
+      468
+    ],
+    "destination": [
+      7.25,
+      9.5,
+      550,
+      440
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "smoothing": true,
+    "global_alpha": 1,
+    "composite": 0,
+    "sigma": 135.2,
+    "pre": [],
+    "post": [],
+    "clip": true,
+    "supported": true,
+    "expected_macos": "",
+    "expected_linux": "",
+    "leading_sigmas": [
+      0.8
+    ],
+    "between": []
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 641,
+    "image_height": 479,
+    "image_premultiplied": false,
+    "image_display_p3": false,
+    "source": [
+      3,
+      2,
+      630,
+      468
+    ],
+    "destination": [
+      7.25,
+      9.5,
+      550,
+      440
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "smoothing": false,
+    "global_alpha": 0.7,
+    "composite": 7,
+    "sigma": 200,
+    "pre": [
+      [
+        2.3,
+        0,
+        0,
+        0,
+        -0.3,
+        0,
+        0.8,
+        0,
+        0,
+        0.1,
+        0,
+        0,
+        1.1,
+        0,
+        -0.05,
+        0,
+        0,
+        0,
+        0.65,
+        0
+      ]
+    ],
+    "post": [],
+    "clip": false,
+    "supported": true,
+    "expected_macos": "",
+    "expected_linux": "",
+    "leading_sigmas": [
+      2.5,
+      0
+    ],
+    "between": [
+      [
+        1.3,
+        0,
+        0,
+        0,
+        -0.15,
+        0,
+        1.3,
+        0,
+        0,
+        -0.15,
+        0,
+        0,
+        1.3,
+        0,
+        -0.15,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    ]
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 1,
+    "image_width": 641,
+    "image_height": 479,
+    "image_premultiplied": false,
+    "image_display_p3": true,
+    "source": [
+      3,
+      2,
+      630,
+      468
+    ],
+    "destination": [
+      7.25,
+      9.5,
+      550,
+      440
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "smoothing": false,
+    "global_alpha": 0.998,
+    "composite": 1,
+    "sigma": 270,
+    "pre": [],
+    "post": [],
+    "clip": true,
+    "supported": true,
+    "expected_macos": "",
+    "expected_linux": "",
+    "leading_sigmas": [
+      0.01,
+      6
+    ],
+    "between": [
+      [
+        1.3,
+        0,
+        0,
+        0,
+        -0.15,
+        0,
+        1.3,
+        0,
+        0,
+        -0.15,
+        0,
+        0,
+        1.3,
+        0,
+        -0.15,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    ]
+  },
+  {
+    "width": 137,
+    "height": 111,
+    "pitch": 556,
+    "alpha_type": 2,
+    "image_width": 641,
+    "image_height": 479,
+    "image_premultiplied": false,
+    "image_display_p3": true,
+    "source": [
+      3,
+      2,
+      630,
+      468
+    ],
+    "destination": [
+      7.25,
+      9.5,
+      550,
+      440
+    ],
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "smoothing": false,
+    "global_alpha": 0.998,
+    "composite": 10,
+    "sigma": 300,
+    "pre": [
+      [
+        2.3,
+        0,
+        0,
+        0,
+        -0.3,
+        0,
+        0.8,
+        0,
+        0,
+        0.1,
+        0,
+        0,
+        1.1,
+        0,
+        -0.05,
+        0,
+        0,
+        0,
+        0.65,
+        0
+      ]
+    ],
+    "post": [],
+    "clip": false,
+    "supported": true,
+    "expected_macos": "",
+    "expected_linux": "",
+    "leading_sigmas": [
+      0.8,
+      2.5
+    ],
+    "between": []
+  }
+]
