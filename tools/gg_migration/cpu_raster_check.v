@@ -1414,7 +1414,7 @@ fn main() {
 		check_cropped_image_views(oracle, count) or { eprintln(err.msg()); exit(1) }
 		return
 	}
-	if os.getenv('CPU_RASTER_CHECKS') in ['rejected-spatial-chains', 'identity-first-spatial-chains', 'shadow-first-spatial-chains', 'resampled-spatial-chains', 'source-spatial-chains', 'fractional-spatial-chains', 'images', 'imagefilters', 'image-space-layers', 'converted-image-layers', 'fractional-image-layers', 'image-layer-alpha', 'resampled-image-layers', 'clipped-image-layers', 'identity-image-layers', 'identity-image-sampling', 'near-integer-image-layers', 'near-integer-factored-images', 'resampled-image-shadows', 'near-integer-image-shadows', 'near-integer-factored-shadows', 'identity-image-shadows', 'resolved-image-shadows', 'large-source-image-layers', 'large-near-image-layers', 'large-source-image-shadows', 'large-minified-image-layers', 'large-minified-image-shadows', 'large-subset-image-filters', 'large-identity-image-filters', 'large-resampled-image-filters'] {
+	if os.getenv('CPU_RASTER_CHECKS') in ['rejected-spatial-chains', 'identity-first-spatial-chains', 'shadow-first-spatial-chains', 'resampled-spatial-chains', 'source-spatial-chains', 'fractional-spatial-chains', 'images', 'imagefilters', 'image-space-layers', 'converted-image-layers', 'fractional-image-layers', 'image-layer-alpha', 'resampled-image-layers', 'clipped-image-layers', 'identity-image-layers', 'identity-image-sampling', 'near-integer-image-layers', 'near-integer-factored-images', 'resampled-image-shadows', 'near-integer-image-shadows', 'near-integer-factored-shadows', 'identity-image-shadows', 'resolved-image-shadows', 'large-source-image-layers', 'large-near-image-layers', 'large-source-image-shadows', 'large-minified-image-layers', 'large-minified-image-shadows', 'large-subset-image-filters', 'large-identity-image-filters', 'large-resampled-image-filters', 'large-near-rescale-image-filters'] {
 		check_image_cases(oracle, count)
 		return
 	}
@@ -2491,7 +2491,8 @@ fn check_image_draws(oracle Oracle, count int) !(int, int) {
 	shadow_sources := identity_shadows || near_shadows || os.getenv('CPU_RASTER_CHECKS') == 'resampled-image-shadows'
 	resampled := resampled_chains || shadow_sources || near_integer || identity_sampling || identity_layers || os.getenv('CPU_RASTER_CHECKS') == 'resampled-image-layers'
 	clipped := os.getenv('CPU_RASTER_CHECKS') == 'clipped-image-layers'
-	large_near := os.getenv('CPU_RASTER_CHECKS') == 'large-near-image-layers'
+	large_near_rescale := os.getenv('CPU_RASTER_CHECKS') == 'large-near-rescale-image-filters'
+	large_near := large_near_rescale || os.getenv('CPU_RASTER_CHECKS') == 'large-near-image-layers'
 	large_source_shadows := os.getenv('CPU_RASTER_CHECKS') in ['large-source-image-shadows', 'large-minified-image-shadows']
 	large_identity := os.getenv('CPU_RASTER_CHECKS') == 'large-identity-image-filters'
 	large_resampled := os.getenv('CPU_RASTER_CHECKS') == 'large-resampled-image-filters'
@@ -2697,9 +2698,12 @@ fn check_image_draws(oracle Oracle, count int) !(int, int) {
 		}
 		if large_near {
 			sx,sy := f32(1)+f32(rand.f64()*.0008-.0004),f32(1)+f32(rand.f64()*.0008-.0004)
-			c = BitmapCase{...c,image:cpuraster.CanvasPattern{...image,display_p3:false},global_alpha:1,
-				transform:[f32(1),0,0,1,0,0]!,destination:[f32(5),7,c.source[2]*sx,c.source[3]*sy]!,
-				filters:[cpuraster.CanvasFilterStep{kind:.blur,sigma:135.01}]}
+			c = BitmapCase{...c,image:if large_near_rescale { image } else { cpuraster.CanvasPattern{...image,display_p3:false} },
+				global_alpha: if large_near_rescale { c.global_alpha } else { f32(1) },
+				transform:[f32(1),0,0,1,0,0]!,destination:[if large_near_rescale { f32(5.0002) } else { f32(5) },if large_near_rescale { f32(7.0003) } else { f32(7) },c.source[2]*sx,c.source[3]*sy]!,
+				filters: if large_near_rescale {
+					if i%2==0 { random_large_layer_filters() } else { random_large_shadow_filters() }
+				} else { [cpuraster.CanvasFilterStep{kind:.blur,sigma:135.01}] }}
 		}
 		if large_minified {
 			subset := if large_subset { c.source } else { [f32(0),0,f32(image.width),f32(image.height)]! }
