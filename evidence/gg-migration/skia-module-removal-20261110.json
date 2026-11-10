@@ -1,0 +1,350 @@
+{
+  "date_utc": "2026-11-10T03:22:46.209047+00:00",
+  "scope": "Removal of the skia/ V module and its native canvas and shadow bridges; the macOS native painter and Graphite libraries still use Skia",
+  "implementation_commit": "8abf9a7a74f9927bd9ddcba154b995be0ad11456",
+  "source_sha256": {
+    "cpuraster/canvas.v": "94972e60e6c6f6effe6e5268f24217e98cab96628488d7f759f9f1c3b3821d3a",
+    "cpuraster/general_filter.v": "63c1ac5ea105633b9b071347daf0c54145167cfa19abc7fcd260c55e2738397d",
+    "cpuraster/general_filter_test.v": "b5e4f1eef671d166eb9a324213ae9ac07a7b38c9dded8ec3cb854701028f21a6",
+    "cpuraster/gradient.v": "53c14504b971894bccda7a9571d1b96ace8499c21d8a9d461eff3edd5b280e66",
+    "cpuraster/image_shader.v": "86abea212723765a72c2e335a005efb7a55267d330e3096962150000052a2cbf",
+    "cpuraster/packed_path.v": "5f297e7ff3cc21d7b5616c1aa9fb05bb6b9fd2f03e1d5696891cd13db68c0aff",
+    "cpuraster/packed_path_test.v": "a06dce18be7444c08d89c7b864b932d10bb8189ec8cfba0058cd2688ccce863e",
+    "cpuraster/shadow_command.v": "d3f8ab1e962920536b8095a50af942d5aef506946755e733bcaa60200eddf719",
+    "cpuraster/shadow_command_test.v": "4cfc6ffea85ef3b27be4436dd701642d2f4814925b830abb5f8ec370bdc0affc",
+    "html/canvas_cpu_raster_test.v": "8b02d27dfdc6350cdd2b071ec8fa3470e5558af008501444315a3ea2bd94d321",
+    "html/canvas_presentation_orientation_test.v": "5b56c32c4819f14aabd59b945e5d8a0a3cd2868ac02a8db513e60d37d5171bd2",
+    "html/canvas_raster.v": "c4407fcd105fa92fa06472ad6a51095c2a8ebf14704043448f179d5f265944ad",
+    "html/canvas_raster_test.v": "f0af541c91b51ad63bbf474987100e93ff38ebce2ad7b07a16d9c3e1b5847b45",
+    "html/canvas_svg_filters.v": "69fbe9ccc06bd50bd7e2d7a807cc038ef8555112ae0f86093e7e4e84974a52ea",
+    "html/testdata/canvas_cpu_raster_hashes.json": "892347ca6d30946fdb9c0afae2298472a7c24a894ee94155a4bdbf1360ce4b3b",
+    "layout/portable_shadows.v": "f048e2b217026eccd18fed9af13733d7249bd023241e8d98eaa683ad4fa5ed71",
+    "layout/svg_dom_geometry.v": "15629eca10722d53c3cd7e67154018343a702a2520c1d4660e0a0b0709c8b7a2",
+    "layout/svg_hit_testing.v": "5777a91d66795cd65d93a4d19f75a3529e50da4f384d1e1822c58649ffc52faf",
+    "layout/svg_pointer_events_test.v": "3a623e535abefeaea3195d71e93e22ff545634583a7ffef1e0f5beea1f67a39a",
+    "layout/typed_paint_adapter.v": "ac57aa2a9841f3e4e9640d46e95643aa969a995209379eb694d30ed512228f6a",
+    "tools/build_linux_native.py": "9e796492ca3452601a832c5fb3536d6da4f467d91d28cadcdfc1241b009fd493",
+    "tools/test_linux_native.py": "ef10cfd029e1cd08af0b657907a2720fd4a8b03e17d9104c7ed86164a9668231"
+  },
+  "frozen_canvas_parity": {
+    "path": "html/testdata/canvas_cpu_raster_hashes.json",
+    "sha256": "892347ca6d30946fdb9c0afae2298472a7c24a894ee94155a4bdbf1360ce4b3b",
+    "capture": [
+      {
+        "name": "gg-noskia-html-capture2-linux",
+        "guard": {
+          "command": [
+            "/home/alex.guest/code/v/v",
+            "-b",
+            "c",
+            "-cc",
+            "clang",
+            "-enable-globals",
+            "-memory-limit",
+            "10G",
+            "-exclude",
+            "@vlib/time/zoneinfo.native.v",
+            "-path",
+            "/Users/alex/code/vox2|Build/linux/modules|Build/v/httpcompat/9bd9c5749090dee0/modules|@vmodules|@vlib",
+            "-o",
+            "/tmp/vox-prefix/html_parity_linux",
+            "html/canvas_cpu_raster_test.v"
+          ],
+          "reason": "completed",
+          "child_exit_code": 0,
+          "adopted_processes": {},
+          "adoption_error": null,
+          "limit_bytes": 12884901888,
+          "observed_peak_rss_bytes": 6539960320,
+          "elapsed_seconds": 39.677712101,
+          "metric": "sampled sum of process-tree RSS; shared pages may be counted twice"
+        },
+        "summary": []
+      },
+      {
+        "name": "gg-noskia-html-capture-run-linux",
+        "guard": {
+          "command": [
+            "/tmp/vox-prefix/html_parity_linux"
+          ],
+          "reason": "completed",
+          "child_exit_code": 0,
+          "adopted_processes": {},
+          "adoption_error": null,
+          "limit_bytes": 3221225472,
+          "observed_peak_rss_bytes": 50274304,
+          "elapsed_seconds": 3.1904343749999953,
+          "metric": "sampled sum of process-tree RSS; shared pages may be counted twice"
+        },
+        "summary": []
+      }
+    ],
+    "note": "128 results captured on Linux while every comparison against skia.draw_path() passed, before the module was removed"
+  },
+  "checks": [
+    {
+      "name": "gg-noskia-final-focused-c-mac",
+      "guard": {
+        "command": [
+          "/Users/alex/code/v/v",
+          "-b",
+          "c",
+          "-cc",
+          "clang",
+          "-enable-globals",
+          "-memory-limit",
+          "10G",
+          "test",
+          "cpuraster/large_blur_test.v",
+          "cpuraster/large_source_blur_test.v",
+          "cpuraster/filter_layer_test.v",
+          "cpuraster/canvas_image_test.v",
+          "cpuraster/image_filter_test.v",
+          "cpuraster/general_filter_test.v",
+          "cpuraster/shadow_command_test.v",
+          "cpuraster/packed_path_test.v",
+          "cpuraster/blur_test.v"
+        ],
+        "reason": "completed",
+        "child_exit_code": 0,
+        "adopted_processes": {},
+        "adoption_error": null,
+        "limit_bytes": 3221225472,
+        "observed_peak_rss_bytes": 640794624,
+        "elapsed_seconds": 217.914032167,
+        "metric": "sampled sum of process-tree RSS; shared pages may be counted twice"
+      },
+      "summary": [
+        "OK    [1/9] C: 4864.513 ms, R:   286.157 ms /Users/alex/code/vox2/cpuraster/blur_test.v",
+        "OK    [2/9] C: 7601.473 ms, R:  1119.887 ms /Users/alex/code/vox2/cpuraster/canvas_image_test.v",
+        "OK    [3/9] C: 6904.871 ms, R: 65027.907 ms /Users/alex/code/vox2/cpuraster/filter_layer_test.v",
+        "OK    [4/9] C: 6730.621 ms, R:   269.815 ms /Users/alex/code/vox2/cpuraster/general_filter_test.v",
+        "OK    [5/9] C: 9274.55 ms, R:   183.210 ms /Users/alex/code/vox2/cpuraster/image_filter_test.v",
+        "OK    [6/9] C: 11558.195 ms, R:  9336.840 ms /Users/alex/code/vox2/cpuraster/large_blur_test.v",
+        "OK    [7/9] C: 9827.301 ms, R: 54500.535 ms /Users/alex/code/vox2/cpuraster/large_source_blur_test.v",
+        "OK    [8/9] C: 8119.928 ms, R:   164.585 ms /Users/alex/code/vox2/cpuraster/packed_path_test.v",
+        "OK    [9/9] C: 21211.86 ms, R:   323.929 ms /Users/alex/code/vox2/cpuraster/shadow_command_test.v",
+        "Summary for all V _test.v files: 9 passed, 9 total. Elapsed time: 217333 ms, on 1 job. Comptime: 86093 ms. Runtime: 131212 ms."
+      ]
+    },
+    {
+      "name": "gg-noskia-linux-tests",
+      "guard": {
+        "command": [
+          "python3",
+          "tools/test_linux_native.py",
+          "--gc",
+          "boehm",
+          "cpuraster/general_filter_test.v",
+          "cpuraster/shadow_command_test.v",
+          "cpuraster/packed_path_test.v",
+          "layout/portable_shadows_test.v",
+          "layout/svg_pointer_events_test.v",
+          "html/canvas_cpu_raster_test.v",
+          "html/canvas_raster_test.v",
+          "html/canvas_svg_filters_test.v",
+          "html/canvas_presentation_orientation_test.v",
+          "html/canvas_text_raster_test.v"
+        ],
+        "reason": "completed",
+        "child_exit_code": 1,
+        "adopted_processes": {},
+        "adoption_error": null,
+        "limit_bytes": 12884901888,
+        "observed_peak_rss_bytes": 6847778816,
+        "elapsed_seconds": 214.09728676999998,
+        "metric": "sampled sum of process-tree RSS; shared pages may be counted twice"
+      },
+      "summary": [
+        "PASS cpuraster/general_filter_test.v (boehm)",
+        "PASS cpuraster/shadow_command_test.v (boehm)",
+        "PASS cpuraster/packed_path_test.v (boehm)",
+        "PASS layout/portable_shadows_test.v (boehm)",
+        "PASS layout/svg_pointer_events_test.v (boehm)",
+        "FAIL html/canvas_cpu_raster_test.v (exit 1):"
+      ]
+    },
+    {
+      "name": "gg-noskia-linux-tests3",
+      "guard": {
+        "command": [
+          "python3",
+          "tools/test_linux_native.py",
+          "--gc",
+          "boehm",
+          "html/canvas_cpu_raster_test.v",
+          "html/canvas_raster_test.v",
+          "html/canvas_svg_filters_test.v",
+          "html/canvas_presentation_orientation_test.v",
+          "html/canvas_text_raster_test.v"
+        ],
+        "reason": "completed",
+        "child_exit_code": 0,
+        "adopted_processes": {},
+        "adoption_error": null,
+        "limit_bytes": 12884901888,
+        "observed_peak_rss_bytes": 6697000960,
+        "elapsed_seconds": 396.25027976,
+        "metric": "sampled sum of process-tree RSS; shared pages may be counted twice"
+      },
+      "summary": [
+        "PASS html/canvas_cpu_raster_test.v (boehm)",
+        "PASS html/canvas_raster_test.v (boehm)",
+        "PASS html/canvas_svg_filters_test.v (boehm)",
+        "PASS html/canvas_presentation_orientation_test.v (boehm)",
+        "PASS html/canvas_text_raster_test.v (boehm)"
+      ]
+    },
+    {
+      "name": "gg-noskia-mac-check",
+      "guard": {
+        "command": [
+          "/Users/alex/code/v/v",
+          "-b",
+          "c",
+          "-memory-limit",
+          "10G",
+          "-check",
+          "-enable-globals",
+          "-d",
+          "vox_sparse_ttf",
+          "-d",
+          "vox_production",
+          "-d",
+          "vox_ui2",
+          "-d",
+          "vox_gg_canvas",
+          "-path",
+          "/Users/alex/code/vox2|/Users/alex/code/vox2/Build/v/font-runtime/c5fa587b66117bf88d3028f77487d3472cbdc8b1072b9a2619aff3039c570103|/Users/alex/code/vox2/Build/v/httpcompat/f151de9719b20055/modules|/Users/alex/code/vox2/Build/v/modules|@vmodules|@vlib",
+          "."
+        ],
+        "reason": "completed",
+        "child_exit_code": 0,
+        "adopted_processes": {},
+        "adoption_error": null,
+        "limit_bytes": 12884901888,
+        "observed_peak_rss_bytes": 4437917696,
+        "elapsed_seconds": 114.093410125,
+        "metric": "sampled sum of process-tree RSS; shared pages may be counted twice"
+      },
+      "summary": []
+    },
+    {
+      "name": "gg-noskia-fma2",
+      "guard": {
+        "command": [
+          "python3",
+          "/tmp/vox-prefix/fma_general.py"
+        ],
+        "reason": "completed",
+        "child_exit_code": 0,
+        "adopted_processes": {},
+        "adoption_error": null,
+        "limit_bytes": 12884901888,
+        "observed_peak_rss_bytes": 376815616,
+        "elapsed_seconds": 36.381578417,
+        "metric": "sampled sum of process-tree RSS; shared pages may be counted twice"
+      },
+      "summary": [
+        "0 contracted multiply-add instructions in cpuraster__* functions (170 explicit)"
+      ]
+    },
+    {
+      "name": "gg-noskia-linux-build",
+      "guard": {
+        "command": [
+          "sh",
+          "build-linux-browser.sh"
+        ],
+        "reason": "completed",
+        "child_exit_code": 0,
+        "adopted_processes": {},
+        "adoption_error": null,
+        "limit_bytes": 12884901888,
+        "observed_peak_rss_bytes": 7590051840,
+        "elapsed_seconds": 162.49157911600003,
+        "metric": "sampled sum of process-tree RSS; shared pages may be counted twice"
+      },
+      "summary": [
+        "Built Vox: /Users/alex/code/vox2/Build/linux-noskia/vox"
+      ]
+    },
+    {
+      "name": "gg-noskia-linux-smoke",
+      "guard": {
+        "command": [
+          "Build/linux-noskia/vox",
+          "--headless-smoke"
+        ],
+        "reason": "completed",
+        "child_exit_code": 0,
+        "adopted_processes": {},
+        "adoption_error": null,
+        "limit_bytes": 3221225472,
+        "observed_peak_rss_bytes": 112652288,
+        "elapsed_seconds": 1.028734773999986,
+        "metric": "sampled sum of process-tree RSS; shared pages may be counted twice"
+      },
+      "summary": []
+    }
+  ],
+  "linux_linkage": [
+    "sha256 0e706672fbd9a541caf9c715f9abf4155abedebbac7612d5f17cb92d762bb88c",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libgc.so.1]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libjavascriptcoregtk-4.1.so.0]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libgobject-2.0.so.0]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libglib-2.0.so.0]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libz.so.1]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libcurl.so.4]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libicuuc.so.74]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libXrandr.so.2]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libfontconfig.so.1]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libfreetype.so.6]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libharfbuzz.so.0]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libicui18n.so.74]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libicudata.so.74]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libbrotlidec.so.1]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libbrotlienc.so.1]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libEGL.so.1]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libGLESv2.so.2]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libssl.so.3]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libcrypto.so.3]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libwoff2dec.so.1.0.2]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libwoff2common.so.1.0.2]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libbrotlicommon.so.1]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libX11.so.6]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libXi.so.6]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libXcursor.so.1]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libGL.so.1]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]",
+    " 0x0000000000000001 (NEEDED)             Shared library: [ld-linux-aarch64.so.1]",
+    "ldd skia lines: 0",
+    "skia symbols: 0"
+  ],
+  "linux_fastc_attempt": {
+    "log_tail": [
+      "Built linux platform bridge",
+      "Built linux gfxfont bridge",
+      "Building Vox (boehm) with: -b fastc -memory-limit 10G -enable-globals -cc clang -d vox_production -d use_openssl -exclude @vlib/time/zoneinfo.native.v -path /Users/alex/code/vox2|/Users/alex/code/vox2/Build/linux/modules|/Users/alex/code/vox2/Build/linux/modules|/Users/alex/code/vox2/Build/v/httpcompat/9bd9c5749090dee0/modules|@vmodules|@vlib -gc boehm -d dynamic_boehm",
+      "generic instance `x__json2__Encoder.encode_value[browsertabs__TabColor]`: fastc parser does not support for-in collection `member.attrs` of type `` at byte 4853 in /home/alex.guest/code/v/vlib/json2/encode.v",
+      "{\"command\": [\"sh\", \"build-linux-browser.sh\"], \"reason\": \"completed\", \"child_exit_code\": 1, \"adopted_processes\": {}, \"adoption_error\": null, \"limit_bytes\": 12884901888, \"observed_peak_rss_bytes\": 1837391872, \"elapsed_seconds\": 41.497974109, \"metric\": \"sampled sum of process-tree RSS; shared pages may be counted twice\"}"
+    ],
+    "note": "FastC in the VM V cannot compile a json2 generic instance in browser-tab code; unrelated to Skia; C backend used"
+  },
+  "linux_render": {
+    "note": "Xvfb --screenshot: outer, inset and rotated text CSS shadows render through cpuraster.rasterize_shadow; canvas readback fill=34,170,102,255, rotated blur centre=204,51,51,255, edge alpha 137. Canvas elements are not presented by the Linux portable painter (pre-existing: draw_canvas has only a macOS body)."
+  },
+  "setup_failures": [
+    "macOS html test compilation exceeded the 12 GiB guard (V with -stats, then V alone generating C); the suite runs on Linux, as before.",
+    "First Linux html run stopped at compilation: this V removed the json module (json2 used instead); second run stopped on a map-copy error in the hash lookup; third run passed all five files.",
+    "First macOS type check used the default FastC backend, which has no check-only mode; rerun with -b c passed.",
+    "First FMA audit of the new fallback found 19 contracted multiply-adds; products were split into separate statements and the rerun found 0."
+  ],
+  "limits": [
+    "Draws the exact ports decline now use a device-space fallback that is faithful but not bit-identical to Skia.",
+    "macOS still links Skia through libLadybirdVSkiaText.dylib, libVoxGraphite.dylib and libVoxGraphiteDawn.dylib."
+  ]
+}
