@@ -37,7 +37,7 @@
     "clip": true,
     "supported": true,
     "expected_macos": "aa24d198e860ea26d5e7f35ed29dc1ac837b49663fc00048b26e3c3009b3258b",
-    "expected_linux": "",
+    "expected_linux": "43fe1c86f4c27b3321147c0d458c142b0246203fdf3cad0a079305a4d1f148f5",
     "leading_sigmas": [
       0.01
     ],
@@ -130,7 +130,7 @@
     "clip": false,
     "supported": true,
     "expected_macos": "d4ec784fa0eae5b51b711b4b1c3bb699f6a10c2b3b908e27f65e5f2d34a9a136",
-    "expected_linux": "",
+    "expected_linux": "d4ec784fa0eae5b51b711b4b1c3bb699f6a10c2b3b908e27f65e5f2d34a9a136",
     "leading_sigmas": [
       0.001,
       0.02
@@ -199,7 +199,7 @@
     "clip": true,
     "supported": true,
     "expected_macos": "6d462cf67c51ce74c14a43d814f3a089ed17ea08faa94ebe6cc26422343af11e",
-    "expected_linux": "",
+    "expected_linux": "6d462cf67c51ce74c14a43d814f3a089ed17ea08faa94ebe6cc26422343af11e",
     "leading_sigmas": [
       0.03,
       0,
@@ -295,7 +295,7 @@
     "clip": false,
     "supported": true,
     "expected_macos": "23d6224b117431df414bbc8f7992333cf1abc95bf2a2ca267e3c913f1537a0ec",
-    "expected_linux": "",
+    "expected_linux": "23d6224b117431df414bbc8f7992333cf1abc95bf2a2ca267e3c913f1537a0ec",
     "leading_sigmas": [
       0.02
     ],
@@ -363,7 +363,7 @@
     "clip": false,
     "supported": true,
     "expected_macos": "f023909591bbd5590cea9710ba690c0d2c1235760060a30ba506fc76f88be9bf",
-    "expected_linux": "",
+    "expected_linux": "f023909591bbd5590cea9710ba690c0d2c1235760060a30ba506fc76f88be9bf",
     "leading_sigmas": [
       0.01
     ],
@@ -479,7 +479,7 @@
     "clip": false,
     "supported": true,
     "expected_macos": "b83721e57e55b90a0ac0c0da9952e08efefaae5b40c0522e87dfea8da49691d7",
-    "expected_linux": "",
+    "expected_linux": "978b3647229afea5a5ce02d4e4446f5eac30d838d254eb4abb93260cb0e883c4",
     "leading_sigmas": [
       0.001,
       0.02
@@ -571,7 +571,7 @@
     "clip": false,
     "supported": true,
     "expected_macos": "01f69302a2caf8ca2bb2652bbf838b3e65fc3079858c92f02335f0c4868a8d05",
-    "expected_linux": "",
+    "expected_linux": "01f69302a2caf8ca2bb2652bbf838b3e65fc3079858c92f02335f0c4868a8d05",
     "leading_sigmas": [
       0.03,
       0,
@@ -644,7 +644,7 @@
     "clip": false,
     "supported": true,
     "expected_macos": "42936ee777aaa701684b48f2e508d341a35b75f3ccee8647cf7b257de05ed9e8",
-    "expected_linux": "",
+    "expected_linux": "4500ca9b41182b34e61174088ff95a28f7dd7013f652fc743f44173b1ddb067b",
     "leading_sigmas": [
       0.02
     ],
@@ -735,7 +735,7 @@
     "clip": false,
     "supported": true,
     "expected_macos": "88c8be8be417d08f1baa3a43a09380c0daa582830d150f22e5881b947853363e",
-    "expected_linux": "",
+    "expected_linux": "88c8be8be417d08f1baa3a43a09380c0daa582830d150f22e5881b947853363e",
     "leading_sigmas": [
       0.01
     ],
@@ -829,7 +829,7 @@
     "clip": true,
     "supported": true,
     "expected_macos": "9c19fb0d7af7e1c2560cbe1115c3472a81491a351fe88654c64c8320b07c1a27",
-    "expected_linux": "",
+    "expected_linux": "0382e0abf59b1bc6660ad064a871ac5a45a157340a72ff0de63bba1e36acf70a",
     "leading_sigmas": [
       0.001,
       0.02
@@ -898,7 +898,7 @@
     "clip": false,
     "supported": true,
     "expected_macos": "e61274991eb28bb638157ca1020dc28e686d8d103a860469e9fa81fc72069785",
-    "expected_linux": "",
+    "expected_linux": "e61274991eb28bb638157ca1020dc28e686d8d103a860469e9fa81fc72069785",
     "leading_sigmas": [
       0.03,
       0,
@@ -994,7 +994,7 @@
     "clip": false,
     "supported": true,
     "expected_macos": "78f7a93c681ea21a3c00a851b8607043de3adcf8009ebc43c4a9b9da379526b8",
-    "expected_linux": "",
+    "expected_linux": "78f7a93c681ea21a3c00a851b8607043de3adcf8009ebc43c4a9b9da379526b8",
     "leading_sigmas": [
       0.02
     ],
@@ -1085,7 +1085,7 @@
     "clip": false,
     "supported": true,
     "expected_macos": "e1ea97290f53f652fe24f914b7561299dfb212b4ec9d83a81e3f8abee6848df0",
-    "expected_linux": "",
+    "expected_linux": "e1ea97290f53f652fe24f914b7561299dfb212b4ec9d83a81e3f8abee6848df0",
     "leading_sigmas": [
       0.01
     ],
@@ -1179,7 +1179,7 @@
     "clip": false,
     "supported": true,
     "expected_macos": "01f69302a2caf8ca2bb2652bbf838b3e65fc3079858c92f02335f0c4868a8d05",
-    "expected_linux": "",
+    "expected_linux": "01f69302a2caf8ca2bb2652bbf838b3e65fc3079858c92f02335f0c4868a8d05",
     "leading_sigmas": [
       0.001,
       0.02
@@ -1271,7 +1271,7 @@
     "clip": false,
     "supported": true,
     "expected_macos": "3b768000a03943d0641fe4bcf34fc6e30da1d97a7c114a84b4cf9936f100778d",
-    "expected_linux": "",
+    "expected_linux": "3b768000a03943d0641fe4bcf34fc6e30da1d97a7c114a84b4cf9936f100778d",
     "leading_sigmas": [
       0.03,
       0,
@@ -1344,7 +1344,7 @@
     "clip": false,
     "supported": true,
     "expected_macos": "f023909591bbd5590cea9710ba690c0d2c1235760060a30ba506fc76f88be9bf",
-    "expected_linux": "",
+    "expected_linux": "f023909591bbd5590cea9710ba690c0d2c1235760060a30ba506fc76f88be9bf",
     "leading_sigmas": [
       0.02
     ],
@@ -1389,7 +1389,7 @@
     "clip": false,
     "supported": true,
     "expected_macos": "53f05b3afc495e4e05f462a325f45b256435571887e30bd09e37ff0c9d417968",
-    "expected_linux": "",
+    "expected_linux": "bf2beb433d512c7dfe2c178f83d32b2ca88ecae5d2548040176dd9f41fc60c7f",
     "leading_sigmas": [
       0.01
     ],
@@ -1483,7 +1483,7 @@
     "clip": false,
     "supported": true,
     "expected_macos": "78f7a93c681ea21a3c00a851b8607043de3adcf8009ebc43c4a9b9da379526b8",
-    "expected_linux": "",
+    "expected_linux": "78f7a93c681ea21a3c00a851b8607043de3adcf8009ebc43c4a9b9da379526b8",
     "leading_sigmas": [
       0.001,
       0.02
@@ -1552,7 +1552,7 @@
     "clip": false,
     "supported": true,
     "expected_macos": "e337b7a188cc687d925033cca467c3e744ad442986d5059b84b6c1217f2f2af5",
-    "expected_linux": "",
+    "expected_linux": "e337b7a188cc687d925033cca467c3e744ad442986d5059b84b6c1217f2f2af5",
     "leading_sigmas": [
       0.03,
       0,
@@ -1602,7 +1602,7 @@
     "clip": true,
     "supported": true,
     "expected_macos": "6518ef34a933aa65cb1d734f5652fe43c371c8775a2097b9cd0910af772470f3",
-    "expected_linux": "",
+    "expected_linux": "25ebdf0d0dc7f9693df2aaaffcdb6ab1ca5579f385ba44588160deb8d21ea844",
     "leading_sigmas": [
       0.02
     ],
@@ -1670,7 +1670,7 @@
     "clip": false,
     "supported": true,
     "expected_macos": "1974fe79303069e1a4cd00f56d37bb2292494bce13f85eba990e8565a13cc1c3",
-    "expected_linux": "",
+    "expected_linux": "1974fe79303069e1a4cd00f56d37bb2292494bce13f85eba990e8565a13cc1c3",
     "leading_sigmas": [
       0.01
     ],
@@ -1764,7 +1764,7 @@
     "clip": false,
     "supported": true,
     "expected_macos": "bd3d3d5dc615e5e3f6aec5b31ef8c24c6b14e3f013e12a1a44c8c7b91c1a8359",
-    "expected_linux": "",
+    "expected_linux": "bd3d3d5dc615e5e3f6aec5b31ef8c24c6b14e3f013e12a1a44c8c7b91c1a8359",
     "leading_sigmas": [
       0.001,
       0.02
@@ -1810,7 +1810,7 @@
     "clip": true,
     "supported": true,
     "expected_macos": "6db2a6d159781dac80ae975f7f148033e0b2d8866b8fcd13b56ca34b3601b0a8",
-    "expected_linux": "",
+    "expected_linux": "35e818619d06bf6158a6a58abc7da602b2191d7d171ff6115dcc85c991c11a5a",
     "leading_sigmas": [
       0.01
     ],
@@ -1903,7 +1903,7 @@
     "clip": false,
     "supported": true,
     "expected_macos": "4f05af7a3b2df0d36593c26cdefcf25982b1d25a6e08a12318da901d4ccdc578",
-    "expected_linux": "",
+    "expected_linux": "4f05af7a3b2df0d36593c26cdefcf25982b1d25a6e08a12318da901d4ccdc578",
     "leading_sigmas": [
       0.001,
       0.02
@@ -1972,7 +1972,7 @@
     "clip": true,
     "supported": true,
     "expected_macos": "809b7c6e5d4cfc7d33a192ef3af85c667311091877ad23e47311ea7b7c3d3b84",
-    "expected_linux": "",
+    "expected_linux": "809b7c6e5d4cfc7d33a192ef3af85c667311091877ad23e47311ea7b7c3d3b84",
     "leading_sigmas": [
       0.03,
       0,
@@ -2068,7 +2068,7 @@
     "clip": false,
     "supported": true,
     "expected_macos": "7a21bc14daed4c2cf481eda6c984531be3300b59889cc723f4fb5a1f42f3eb18",
-    "expected_linux": "",
+    "expected_linux": "7a21bc14daed4c2cf481eda6c984531be3300b59889cc723f4fb5a1f42f3eb18",
     "leading_sigmas": [
       0.02
     ],
@@ -2113,7 +2113,7 @@
     "clip": true,
     "supported": false,
     "expected_macos": "a3d4ad9b0d4b76c27cc3eb66c3e07e5bbf1b3a65bfbf5b47fcb8882b75d5dc14",
-    "expected_linux": "",
+    "expected_linux": "07beabeffda728ba7ccb31875dc909f949803b5b24670bb5f8b6bace70c28e39",
     "leading_sigmas": [
       0.01
     ],
@@ -2183,7 +2183,7 @@
     "clip": false,
     "supported": false,
     "expected_macos": "e337b7a188cc687d925033cca467c3e744ad442986d5059b84b6c1217f2f2af5",
-    "expected_linux": "",
+    "expected_linux": "e337b7a188cc687d925033cca467c3e744ad442986d5059b84b6c1217f2f2af5",
     "leading_sigmas": [
       0.01
     ],
@@ -2253,7 +2253,7 @@
     "clip": true,
     "supported": false,
     "expected_macos": "9c19fb0d7af7e1c2560cbe1115c3472a81491a351fe88654c64c8320b07c1a27",
-    "expected_linux": "",
+    "expected_linux": "0382e0abf59b1bc6660ad064a871ac5a45a157340a72ff0de63bba1e36acf70a",
     "leading_sigmas": [
       0.01
     ],
