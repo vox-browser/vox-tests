@@ -7,6 +7,7 @@ import gfxfont
 import math
 import os
 import rand
+import time
 
 fn C.dlopen(path &char, mode int) voidptr
 fn C.dlsym(handle voidptr, symbol &char) voidptr
@@ -1348,6 +1349,10 @@ fn main() {
 	count := if os.args.len > 2 { os.args[2].int() } else { 20000 }
 	seed := if os.args.len > 3 { u32(os.args[3].int()) } else { u32(20261106) }
 	rand.seed([seed, 7])
+	if os.getenv('CPU_RASTER_CHECKS') == 'perf' {
+		check_canvas_perf(oracle, count)
+		return
+	}
 	if os.getenv('CPU_RASTER_CHECKS') in ['pathcontains', 'pathhits'] {
 		check_path_geometry_hits(count) or { eprintln(err.msg()); exit(1) }
 		return
@@ -4029,4 +4034,285 @@ fn check_image_layer_bounds(oracle Oracle, count int) ! {
   if compare_canvas_bitmap(oracle, random_composite_bitmap(w, h, pitch, alpha_type), c, 'image bounds ${i}')! { declined++ }
  }
  println('source image layer bounds: ${count-declined} exact, ${declined} declined')
+}
+
+// Timing comparison of the former production Skia canvas bridge (the oracle
+// runs vox_skia_canvas_path()'s writePixels, draw and readPixels per command)
+// with cpuraster on identical commands. Each scene draws a batch into its own
+// 800x600 premultiplied canvas; batches alternate which side runs first.
+struct PerfScene {
+	name    string
+	fills   []FillCase
+	strokes []StrokeCase
+	bitmaps []BitmapCase
+	glyphs  []GlyphCase
+}
+
+fn perf_rect(x f32, y f32, w f32, h f32) []f32 {
+	mut s := segment(0, [x, y])
+	s << segment(1, [x + w, y])
+	s << segment(1, [x + w, y + h])
+	s << segment(1, [x, y + h])
+	s << segment(5, [x, y])
+	return s
+}
+
+fn perf_circle(cx f32, cy f32, r f32) []f32 {
+	k := r * f32(0.5522848)
+	mut s := segment(0, [cx + r, cy])
+	s << segment(3, [cx, cy + r, cx + r, cy + k, cx + k, cy + r])
+	s << segment(3, [cx - r, cy, cx - k, cy + r, cx - r, cy + k])
+	s << segment(3, [cx, cy - r, cx - r, cy - k, cx - k, cy - r])
+	s << segment(3, [cx + r, cy, cx + k, cy - r, cx + r, cy - k])
+	s << segment(5, [cx + r, cy])
+	return s
+}
+
+fn perf_polyline(points int, y0 f32, amplitude f32) []f32 {
+	mut s := segment(0, [f32(10), y0])
+	for i in 1 .. points {
+		x := f32(10) + f32(i) * f32(780) / f32(points)
+		y := y0 + amplitude * f32(math.sin(f64(i) * 0.37)) + f32(i % 7) * 1.5
+		s << segment(1, [x, y])
+	}
+	return s
+}
+
+fn perf_scenes(repo string) []PerfScene {
+	w, h, pitch := 800, 600, 3200
+	identity := [f32(1), 0, 0, 1, 0, 0]!
+	base := FillCase{width: w, height: h, pitch: pitch, alpha_type: 2, transform: identity, global_alpha: 1}
+	mut rects := []FillCase{}
+	mut circles := []FillCase{}
+	mut gradients := []FillCase{}
+	mut shadows := []FillCase{}
+	for i in 0 .. 200 {
+		x, y := f32((i * 37) % 700), f32((i * 53) % 520)
+		rects << FillCase{...base, segments: perf_rect(x, y, 60, 40), color: u32(0xc0000000) | u32(i * 2654435761 & 0xffffff)}
+		if i < 100 {
+			circles << FillCase{...base, segments: perf_circle(x + 40, y + 40, f32(10 + i % 30)), color: u32(0xe0000000) | u32(i * 40503 & 0xffffff)}
+		}
+		if i < 50 {
+			gradients << FillCase{...base, segments: perf_rect(x, y, 120, 80), color: 0xff000000, style: cpuraster.CanvasPaintStyle(cpuraster.CanvasGradient{kind: 1, x0: x, y0: y, x1: x + 120, y1: y + 80,
+				stops: [f32(0), 1, 0.2, 0.1, 1, 0.5, 0.1, 0.8, 0.3, 0.7, 1, 0.1, 0.2, 0.9, 1]})}
+			shadows << FillCase{...base, segments: perf_rect(x + 20, y + 20, 80, 50), color: 0x80000000, blur: 8}
+		}
+	}
+	stroke_base := StrokeCase{width: w, height: h, pitch: pitch, alpha_type: 2, transform: identity, global_alpha: 1, miter: 10}
+	mut hairlines := []StrokeCase{}
+	mut thick := []StrokeCase{}
+	for i in 0 .. 10 {
+		hairlines << StrokeCase{...stroke_base, segments: perf_polyline(400, f32(40 + i * 55), 30), color: u32(0xff000000) | u32(i * 977777 & 0xffffff), line_width: 1}
+		thick << StrokeCase{...stroke_base, segments: perf_polyline(100, f32(40 + i * 55), 30), color: u32(0xff000000) | u32(i * 655555 & 0xffffff), line_width: 4, cap: 1, join: 0}
+	}
+	mut image_pixels := []u8{len: 256 * 256 * 4}
+	for p in 0 .. 256 * 256 {
+		a := u8(255)
+		image_pixels[p * 4] = u8(p % 256)
+		image_pixels[p * 4 + 1] = u8((p / 256) % 256)
+		image_pixels[p * 4 + 2] = u8((p * 7) % 256)
+		image_pixels[p * 4 + 3] = a
+	}
+	image := cpuraster.CanvasPattern{pixels: image_pixels, width: 256, height: 256, pitch: 1024, premultiplied: true}
+	mut bitmaps := []BitmapCase{}
+	for i in 0 .. 50 {
+		bitmaps << BitmapCase{width: w, height: h, pitch: pitch, alpha_type: 2, operation: 2, smoothing: true, transform: identity, global_alpha: 1,
+			destination: [f32((i * 41) % 600), f32((i * 29) % 450), 200, 150]!, source: [f32(0), 0, 256, 256]!, image: image}
+	}
+	mut texts := []GlyphCase{}
+	fonts := glyph_fonts(repo)
+	font := fonts.filter(it.contains('NotoSans-Regular'))
+	if font.len > 0 {
+		for i in 0 .. 50 {
+			mut ids := []u16{}
+			mut positions := []f32{}
+			for g in 0 .. 30 {
+				ids << u16(36 + (g * 7 + i) % 26)
+				positions << [f32(g) * 8, 0]
+			}
+			texts << GlyphCase{width: w, height: h, pitch: pitch, alpha_type: 2, font_path: font[0], font_size: 14, glyphs: ids, positions: positions,
+				translation: [f32(10 + (i % 3) * 260), f32(20 + (i / 3) * 34)]!, transform: identity, color: 0xff202020, global_alpha: 1}
+		}
+	}
+	return [PerfScene{name: 'rect fills', fills: rects}, PerfScene{name: 'circle fills', fills: circles},
+		PerfScene{name: 'hairline polylines', strokes: hairlines}, PerfScene{name: '4px round strokes', strokes: thick},
+		PerfScene{name: 'gradient fills', fills: gradients}, PerfScene{name: 'blurred shadows', fills: shadows},
+		PerfScene{name: 'scaled drawImage', bitmaps: bitmaps}, PerfScene{name: 'text runs', glyphs: texts}]
+}
+
+$if macos {
+	#include <libproc.h>
+}
+
+struct C.rusage_info_v4 {
+	ri_instructions u64
+}
+
+fn C.proc_pid_rusage(pid int, flavor int, buffer voidptr) int
+
+// The process's retired instructions, which host contention does not
+// change as it changes wall-clock time; 0 where the counter is unavailable.
+fn perf_instructions() i64 {
+	$if macos {
+		mut info := C.rusage_info_v4{}
+		if C.proc_pid_rusage(C.getpid(), C.RUSAGE_INFO_V4, voidptr(&info)) == 0 {
+			return i64(info.ri_instructions)
+		}
+	}
+	return 0
+}
+
+// One side of a scene: returns elapsed nanoseconds, retired instructions and
+// the final pixels.
+fn perf_run(oracle Oracle, glyph_oracle OracleCanvasGlyphs, scene PerfScene, skia bool) (i64, i64, []u8) {
+	mut pixels := []u8{len: 800 * 600 * 4, init: 255}
+	instructions := perf_instructions()
+	sw := time.new_stopwatch()
+	for c in scene.fills {
+		if skia {
+			mut floats := c.transform[..].clone()
+			floats << c.global_alpha
+			floats << c.segments
+			mut values := [i32(c.width), c.height, c.pitch, c.alpha_type, int(c.even_odd), c.segments.len / 12, i32(c.color)]
+			clip_values, clip_floats := clip_arguments(c.clips)
+			values << clip_values
+			values << i32(c.composite)
+			floats << clip_floats
+			floats << c.blur
+			append_style(oracle, mut values, mut floats, c.style)
+			send_filters(oracle, c.filters)
+			oracle.canvas_fill(pixels.data, values.data, floats.data)
+		} else {
+			cpuraster.fill_canvas_path(mut pixels, c.width, c.height, c.pitch, c.alpha_type, cpuraster.canvas_path(c.segments, c.even_odd),
+				c.transform, c.color, c.style, c.global_alpha, canvas_mode(c.composite), c.blur, []cpuraster.Path{}, none)
+		}
+	}
+	for c in scene.strokes {
+		if skia {
+			mut floats := c.transform[..].clone()
+			floats << [c.global_alpha, c.line_width, c.miter]
+			floats << c.segments
+			floats << c.dash_offset
+			floats << c.dashes
+			mut values := [i32(c.width), c.height, c.pitch, c.alpha_type, c.segments.len / 12, i32(c.color), c.cap, c.join, c.dashes.len]
+			clip_values, clip_floats := clip_arguments(c.clips)
+			values << clip_values
+			values << i32(c.composite)
+			floats << clip_floats
+			floats << c.blur
+			append_style(oracle, mut values, mut floats, c.style)
+			send_filters(oracle, c.filters)
+			oracle.canvas_stroke(pixels.data, values.data, floats.data)
+		} else {
+			cpuraster.stroke_canvas_path(mut pixels, c.width, c.height, c.pitch, c.alpha_type, cpuraster.canvas_path(c.segments, false),
+				c.transform, c.color, c.style, c.global_alpha, canvas_mode(c.composite), c.blur, c.line_width, unsafe { cpuraster.StrokeCap(c.cap) },
+				unsafe { cpuraster.StrokeJoin(c.join) }, c.miter, c.dashes, c.dash_offset, []cpuraster.Path{}, none)
+		}
+	}
+	for c in scene.bitmaps {
+		img := c.image or { continue }
+		if skia {
+			mut floats := c.transform[..].clone()
+			floats << c.global_alpha
+			floats << c.destination[..]
+			floats << c.source[..]
+			mut values := [i32(c.width), c.height, c.pitch, c.alpha_type, c.operation, int(c.smoothing)]
+			clip_values, clip_floats := clip_arguments(c.clips)
+			values << clip_values
+			floats << clip_floats
+			values << [i32(c.composite), i32(c.color)]
+			oracle.pattern(img.pixels.data)
+			values << [i32(img.width), img.height, img.pitch, 2, 0]
+			send_filters(oracle, c.filters)
+			oracle.canvas_bitmap(pixels.data, values.data, floats.data)
+		} else {
+			cpuraster.draw_canvas_image(mut pixels, c.width, c.height, c.pitch, c.alpha_type, c.transform,
+				cpuraster.CanvasBitmap{pixels: img.pixels, width: img.width, height: img.height, pitch: img.pitch, premultiplied: true},
+				c.source, c.destination, c.smoothing, c.global_alpha, canvas_mode(c.composite), []cpuraster.Path{})
+		}
+	}
+	for c in scene.glyphs {
+		if skia {
+			mut floats := c.transform[..].clone()
+			floats << [c.global_alpha, c.font_size, c.translation[0], c.translation[1]]
+			floats << c.positions
+			mut values := [i32(c.width), c.height, c.pitch, c.alpha_type, i32(c.color), c.glyphs.len, c.face_index]
+			clip_values, clip_floats := clip_arguments(c.clips)
+			values << clip_values
+			values << i32(c.composite)
+			floats << clip_floats
+			append_style(oracle, mut values, mut floats, c.style)
+			send_filters(oracle, c.filters)
+			glyph_oracle(pixels.data, c.font_path.str, c.glyphs.data, values.data, floats.data)
+		} else {
+			cpuraster.fill_canvas_glyphs(mut pixels, c.width, c.height, c.pitch, c.alpha_type, cpuraster.CanvasGlyphRun{font_path: c.font_path,
+				face_index: c.face_index, font_size: c.font_size, glyphs: c.glyphs, positions: c.positions, translation: c.translation},
+				c.transform, c.color, c.style, c.global_alpha, canvas_mode(c.composite), []cpuraster.Path{}, none)
+		}
+	}
+	elapsed := sw.elapsed().nanoseconds()
+	return elapsed, perf_instructions() - instructions, pixels
+}
+
+fn perf_median(values []i64) i64 {
+	mut sorted := values.clone()
+	sorted.sort()
+	return if sorted.len % 2 == 1 { sorted[sorted.len / 2] } else { (sorted[sorted.len / 2 - 1] + sorted[sorted.len / 2]) / 2 }
+}
+
+fn check_canvas_perf(oracle Oracle, batches int) {
+	library := C.dlopen(os.args[1].str, 2)
+	glyph_oracle := unsafe { OracleCanvasGlyphs(oracle_symbol(library, 'oracle_canvas_glyphs')) }
+	scenes := perf_scenes(vox_source_root())
+	println('scene\tdraws\tskia_median_ms\tcpuraster_median_ms\tratio\tskia_median_minstr\tcpuraster_median_minstr\tinstr_ratio\tidentical')
+	only := os.getenv('CPU_RASTER_PERF_SCENE')
+	profile_side := os.getenv('CPU_RASTER_PERF_SIDE')
+	for scene in scenes {
+		draws := scene.fills.len + scene.strokes.len + scene.bitmaps.len + scene.glyphs.len
+		if only != '' && scene.name != only {
+			continue
+		}
+		if profile_side != '' {
+			// Profiling: run only one side, untimed by the comparison.
+			for _ in 0 .. batches {
+				perf_run(oracle, glyph_oracle, scene, profile_side == 'skia')
+			}
+			continue
+		}
+		if draws == 0 {
+			println('${scene.name}\t0\tskipped')
+			continue
+		}
+		mut skia_times := []i64{}
+		mut cpu_times := []i64{}
+		mut skia_instructions := []i64{}
+		mut cpu_instructions := []i64{}
+		mut identical := true
+		// One untimed warmup per side fills font and strike caches.
+		perf_run(oracle, glyph_oracle, scene, true)
+		perf_run(oracle, glyph_oracle, scene, false)
+		for b in 0 .. batches {
+			if b % 2 == 0 {
+				st, si, sp := perf_run(oracle, glyph_oracle, scene, true)
+				ct, ci, cp := perf_run(oracle, glyph_oracle, scene, false)
+				skia_times << st
+				cpu_times << ct
+				skia_instructions << si
+				cpu_instructions << ci
+				identical = identical && sp == cp
+			} else {
+				ct, ci, cp := perf_run(oracle, glyph_oracle, scene, false)
+				st, si, sp := perf_run(oracle, glyph_oracle, scene, true)
+				skia_times << st
+				cpu_times << ct
+				skia_instructions << si
+				cpu_instructions << ci
+				identical = identical && sp == cp
+			}
+		}
+		s, c := perf_median(skia_times), perf_median(cpu_times)
+		si, ci := perf_median(skia_instructions), perf_median(cpu_instructions)
+		instr_ratio := if si > 0 { f64(ci) / f64(si) } else { 0.0 }
+		println('${scene.name}\t${draws}\t${f64(s) / 1e6:.3f}\t${f64(c) / 1e6:.3f}\t${f64(c) / f64(s):.3f}\t${f64(si) / 1e6:.2f}\t${f64(ci) / 1e6:.2f}\t${instr_ratio:.3f}\t${identical}')
+	}
 }
