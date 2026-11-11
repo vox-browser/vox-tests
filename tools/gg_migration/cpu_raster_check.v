@@ -4146,27 +4146,35 @@ $if macos {
 
 struct C.rusage_info_v4 {
 	ri_instructions u64
+	ri_cycles       u64
 }
 
 fn C.proc_pid_rusage(pid int, flavor int, buffer voidptr) int
 
-// The process's retired instructions, which host contention does not
-// change as it changes wall-clock time; 0 where the counter is unavailable.
-fn perf_instructions() i64 {
+// The process's retired instructions and CPU cycles, which host
+// contention changes less than wall-clock time; 0 where the counters are
+// unavailable.
+fn perf_counters() (i64, i64) {
 	$if macos {
 		mut info := C.rusage_info_v4{}
 		if C.proc_pid_rusage(C.getpid(), C.RUSAGE_INFO_V4, voidptr(&info)) == 0 {
-			return i64(info.ri_instructions)
+			return i64(info.ri_instructions), i64(info.ri_cycles)
 		}
 	}
-	return 0
+	return 0, 0
+}
+
+struct PerfSample {
+	ns           i64
+	instructions i64
+	cycles       i64
 }
 
 // One side of a scene: returns elapsed nanoseconds, retired instructions and
-// the final pixels.
-fn perf_run(oracle Oracle, glyph_oracle OracleCanvasGlyphs, scene PerfScene, skia bool) (i64, i64, []u8) {
+// CPU cycles, and the final pixels.
+fn perf_run(oracle Oracle, glyph_oracle OracleCanvasGlyphs, scene PerfScene, skia bool) (PerfSample, []u8) {
 	mut pixels := []u8{len: 800 * 600 * 4, init: 255}
-	instructions := perf_instructions()
+	instructions, cycles := perf_counters()
 	sw := time.new_stopwatch()
 	for c in scene.fills {
 		if skia {
@@ -4251,7 +4259,18 @@ fn perf_run(oracle Oracle, glyph_oracle OracleCanvasGlyphs, scene PerfScene, ski
 		}
 	}
 	elapsed := sw.elapsed().nanoseconds()
-	return elapsed, perf_instructions() - instructions, pixels
+	end_instructions, end_cycles := perf_counters()
+	return PerfSample{elapsed, end_instructions - instructions, end_cycles - cycles}, pixels
+}
+
+fn perf_min(values []i64) i64 {
+	mut sorted := values.clone()
+	sorted.sort()
+	return sorted[0]
+}
+
+fn perf_ratio(a i64, b i64) f64 {
+	return if b > 0 { f64(a) / f64(b) } else { 0.0 }
 }
 
 fn perf_median(values []i64) i64 {
@@ -4264,7 +4283,7 @@ fn check_canvas_perf(oracle Oracle, batches int) {
 	library := C.dlopen(os.args[1].str, 2)
 	glyph_oracle := unsafe { OracleCanvasGlyphs(oracle_symbol(library, 'oracle_canvas_glyphs')) }
 	scenes := perf_scenes(vox_source_root())
-	println('scene\tdraws\tskia_median_ms\tcpuraster_median_ms\tratio\tskia_median_minstr\tcpuraster_median_minstr\tinstr_ratio\tidentical')
+	println('scene\tdraws\tskia_median_ms\tcpuraster_median_ms\tratio\tskia_min_ms\tcpuraster_min_ms\tmin_ratio\tskia_median_mcycles\tcpuraster_median_mcycles\tcycle_ratio\tskia_median_minstr\tcpuraster_median_minstr\tinstr_ratio\tidentical')
 	only := os.getenv('CPU_RASTER_PERF_SCENE')
 	profile_side := os.getenv('CPU_RASTER_PERF_SIDE')
 	for scene in scenes {
@@ -4283,36 +4302,31 @@ fn check_canvas_perf(oracle Oracle, batches int) {
 			println('${scene.name}\t0\tskipped')
 			continue
 		}
-		mut skia_times := []i64{}
-		mut cpu_times := []i64{}
-		mut skia_instructions := []i64{}
-		mut cpu_instructions := []i64{}
+		mut skia_samples := []PerfSample{}
+		mut cpu_samples := []PerfSample{}
 		mut identical := true
 		// One untimed warmup per side fills font and strike caches.
 		perf_run(oracle, glyph_oracle, scene, true)
 		perf_run(oracle, glyph_oracle, scene, false)
 		for b in 0 .. batches {
 			if b % 2 == 0 {
-				st, si, sp := perf_run(oracle, glyph_oracle, scene, true)
-				ct, ci, cp := perf_run(oracle, glyph_oracle, scene, false)
-				skia_times << st
-				cpu_times << ct
-				skia_instructions << si
-				cpu_instructions << ci
+				ss, sp := perf_run(oracle, glyph_oracle, scene, true)
+				cs, cp := perf_run(oracle, glyph_oracle, scene, false)
+				skia_samples << ss
+				cpu_samples << cs
 				identical = identical && sp == cp
 			} else {
-				ct, ci, cp := perf_run(oracle, glyph_oracle, scene, false)
-				st, si, sp := perf_run(oracle, glyph_oracle, scene, true)
-				skia_times << st
-				cpu_times << ct
-				skia_instructions << si
-				cpu_instructions << ci
+				cs, cp := perf_run(oracle, glyph_oracle, scene, false)
+				ss, sp := perf_run(oracle, glyph_oracle, scene, true)
+				skia_samples << ss
+				cpu_samples << cs
 				identical = identical && sp == cp
 			}
 		}
-		s, c := perf_median(skia_times), perf_median(cpu_times)
-		si, ci := perf_median(skia_instructions), perf_median(cpu_instructions)
-		instr_ratio := if si > 0 { f64(ci) / f64(si) } else { 0.0 }
-		println('${scene.name}\t${draws}\t${f64(s) / 1e6:.3f}\t${f64(c) / 1e6:.3f}\t${f64(c) / f64(s):.3f}\t${f64(si) / 1e6:.2f}\t${f64(ci) / 1e6:.2f}\t${instr_ratio:.3f}\t${identical}')
+		s, c := perf_median(skia_samples.map(it.ns)), perf_median(cpu_samples.map(it.ns))
+		smin, cmin := perf_min(skia_samples.map(it.ns)), perf_min(cpu_samples.map(it.ns))
+		sc, cc := perf_median(skia_samples.map(it.cycles)), perf_median(cpu_samples.map(it.cycles))
+		si, ci := perf_median(skia_samples.map(it.instructions)), perf_median(cpu_samples.map(it.instructions))
+		println('${scene.name}\t${draws}\t${f64(s) / 1e6:.3f}\t${f64(c) / 1e6:.3f}\t${f64(c) / f64(s):.3f}\t${f64(smin) / 1e6:.3f}\t${f64(cmin) / 1e6:.3f}\t${perf_ratio(cmin, smin):.3f}\t${f64(sc) / 1e6:.2f}\t${f64(cc) / 1e6:.2f}\t${perf_ratio(cc, sc):.3f}\t${f64(si) / 1e6:.2f}\t${f64(ci) / 1e6:.2f}\t${perf_ratio(ci, si):.3f}\t${identical}')
 	}
 }
