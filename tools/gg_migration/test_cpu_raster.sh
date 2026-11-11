@@ -43,6 +43,7 @@ files=[*sorted(root.glob('cpuraster/*.[vh]')),*sorted(root.glob('gfxfont/*.[vh]'
        *sorted(root.glob('skia/*.cpp')),*sorted(root.glob('skia/*.h')),
        root/'platform/native_state.h',suite/'tools/gg_migration/cpu_raster_check.v',
        suite/'tools/gg_migration/skia_cpu_oracle.cpp',suite/'tools/gg_migration/test_cpu_raster.sh',
+       *sorted((suite/'tools/gg_migration/oracle_sources/skia').glob('*')),
        suite/'v.mod', compiler]
 if platform.system() == 'Linux':
     files += [skia/'out/Release/libskia.a',skia/'out/Release/libskcms.a',skia/'out/Release/args.gn']
@@ -71,7 +72,7 @@ if [ "$platform" = Linux ]; then
     # pkg-config emits compiler/linker words, not shell source.
     set -- $(pkg-config --cflags --libs freetype2 fontconfig libpng libjpeg libwebp libwebpdemux zlib)
     clang++ -std=c++20 -O2 -fno-rtti -shared -fPIC \
-        -I"$repo_dir" -I"$skia_root" -DSK_HIDE_PATH_EDIT_METHODS -DSK_R32_SHIFT=16 \
+        -I"$test_repo/tools/gg_migration/oracle_sources" -I"$repo_dir" -I"$skia_root" -DSK_HIDE_PATH_EDIT_METHODS -DSK_R32_SHIFT=16 \
         "$test_repo/tools/gg_migration/skia_cpu_oracle.cpp" \
         "$skia_root/out/Release/libskia.a" "$skia_root/out/Release/libskcms.a" \
         "$@" -ldl -lpthread \
@@ -80,7 +81,7 @@ else
     set --
     if [ "${CPU_RASTER_FREETYPE:-0}" = 1 ]; then set -- -DCPURASTER_FREETYPE_ORACLE; fi
     clang++ -std=c++20 -O2 -fno-rtti -dynamiclib "$@" \
-    -I"$repo_dir" -I"$skia_root/include/skia" -I"$skia_root/include" \
+    -I"$test_repo/tools/gg_migration/oracle_sources" -I"$repo_dir" -I"$skia_root/include/skia" -I"$skia_root/include" \
     "$test_repo/tools/gg_migration/skia_cpu_oracle.cpp" -L"$skia_root/lib" -lskia \
     -framework CoreFoundation -framework CoreGraphics -framework CoreText \
     -Wl,-rpath,"$skia_root/lib" -o "$output_dir/$oracle_name"
