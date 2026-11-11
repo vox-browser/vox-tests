@@ -2837,8 +2837,20 @@ struct GlyphCase {
 
 type OracleCanvasGlyphs = fn (pixels &u8, font_path &char, glyphs &u16, values &i32, floats &f32) i32
 
+// One glyph cache across the comparisons and timed runs, as a canvas
+// context keeps one across its draws.
+__global shared_glyph_cache = &cpuraster.GlyphCache(unsafe { nil })
+
+fn glyph_cache() &cpuraster.GlyphCache {
+	if shared_glyph_cache == unsafe { nil } {
+		shared_glyph_cache = cpuraster.new_glyph_cache()
+	}
+	return shared_glyph_cache
+}
+
 // Returns whether cpuraster declined, and whether Skia changed the pixels
-// beyond premultiplying them.
+// beyond premultiplying them. The run also draws through the shared glyph
+// cache, which must reproduce the uncached pixels.
 fn compare_canvas_glyphs(glyphs OracleCanvasGlyphs, oracle Oracle, initial []u8, c GlyphCase, label string) !(bool, bool) {
 	mut expected := initial.clone()
 	mut floats := c.transform[..].clone()
@@ -2861,8 +2873,18 @@ fn compare_canvas_glyphs(glyphs OracleCanvasGlyphs, oracle Oracle, initial []u8,
 		positions:   c.positions
 		translation: c.translation
 	}
-	if !cpuraster.fill_canvas_glyphs(mut actual, c.width, c.height, c.pitch, c.alpha_type, run,
-		c.transform, c.color, c.style, c.global_alpha, canvas_mode(c.composite), clip_paths(c.clips), cpuraster.new_canvas_filter(c.filters)) {
+	drawn := cpuraster.fill_canvas_glyphs(mut actual, c.width, c.height, c.pitch, c.alpha_type, run,
+		c.transform, c.color, c.style, c.global_alpha, canvas_mode(c.composite), clip_paths(c.clips), cpuraster.new_canvas_filter(c.filters))
+	mut cached := initial.clone()
+	mut cache := glyph_cache()
+	cached_drawn := cpuraster.fill_canvas_glyphs_cached(mut cache, mut cached, c.width, c.height, c.pitch,
+		c.alpha_type, run, c.transform, c.color, c.style, c.global_alpha, canvas_mode(c.composite),
+		clip_paths(c.clips), cpuraster.new_canvas_filter(c.filters))
+	if cached_drawn != drawn || cached != actual {
+		save_failure(initial, actual, cached, '${c}')
+		return error('${label}: the glyph cache changed the draw (${c})')
+	}
+	if !drawn {
 		if actual != initial {
 			return error('${label}: cpuraster declined after changing pixels')
 		}
@@ -4253,7 +4275,8 @@ fn perf_run(oracle Oracle, glyph_oracle OracleCanvasGlyphs, scene PerfScene, ski
 			send_filters(oracle, c.filters)
 			glyph_oracle(pixels.data, c.font_path.str, c.glyphs.data, values.data, floats.data)
 		} else {
-			cpuraster.fill_canvas_glyphs(mut pixels, c.width, c.height, c.pitch, c.alpha_type, cpuraster.CanvasGlyphRun{font_path: c.font_path,
+			mut cache := glyph_cache()
+			cpuraster.fill_canvas_glyphs_cached(mut cache, mut pixels, c.width, c.height, c.pitch, c.alpha_type, cpuraster.CanvasGlyphRun{font_path: c.font_path,
 				face_index: c.face_index, font_size: c.font_size, glyphs: c.glyphs, positions: c.positions, translation: c.translation},
 				c.transform, c.color, c.style, c.global_alpha, canvas_mode(c.composite), []cpuraster.Path{}, none)
 		}
